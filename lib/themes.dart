@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Color primaryColor1 = Color(0xFF212C5F);
-Color primaryColor2 = Color(0xFF394867);
+Color primaryColor2 = Color(0xFFFFC523);
 Color primaryColor3 = Color(0xFF7281A1);
 Color primaryColor4 = Color(0xFFFC4C4C4);
 

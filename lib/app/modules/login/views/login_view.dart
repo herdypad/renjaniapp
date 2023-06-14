@@ -18,28 +18,12 @@ class LoginView extends GetView<LoginController> {
     TextEditingController _password_controller = TextEditingController();
 
     return Scaffold(
+      backgroundColor: primaryColor1,
       // appBar: AppBar(
       //   title: const Text('LoginView'),
       //   centerTitle: true,
       // ),
       body: Stack(children: [
-        Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/image/gradient.png"),
-              fit: BoxFit.cover,
-            ),
-            //     gradient: LinearGradient(
-            //   colors: [
-            //     Color.fromARGB(255, 164, 195, 231),
-            //     Color.fromARGB(255, 219, 221, 223),
-            //     Color.fromARGB(255, 240, 232, 191),
-            //   ],
-            //   begin: Alignment.topRight,
-            //   end: Alignment.bottomLeft,
-            // )
-          ),
-        ),
         Scrollbar(
           controller: _scrollController,
           child: SingleChildScrollView(
@@ -54,12 +38,12 @@ class LoginView extends GetView<LoginController> {
                     height: 100,
                   ),
                   Center(
-                      child: SvgPicture.asset('assets/image/logo_orang.svg',
-                          height: 198.95, width: 267)),
+                      child: SvgPicture.asset('assets/icons/icon-launcer.svg',
+                          height: 70.95, width: 70)),
                   const SizedBox(height: 10),
                   Center(
                       child: Image.asset(
-                    'assets/image/logo_presensi.png',
+                    'assets/icons/icon-launcer.png',
                     scale: 4,
                   )),
                   // Center(
@@ -143,7 +127,7 @@ class LoginView extends GetView<LoginController> {
                         height: 49,
                         child: TextButton(
                           style: TextButton.styleFrom(
-                            backgroundColor: appBrandBlue,
+                            backgroundColor: primaryColor2,
                           ),
                           onPressed: () {
                             Navigator.of(context).pushNamedAndRemoveUntil(
@@ -179,7 +163,7 @@ class LoginView extends GetView<LoginController> {
                           child: Text(
                             "Login",
                             style: TextStyle(
-                              color: Color(0xffffffff),
+                              color: primaryColor1,
                             ),
                           ),
                         ),
@@ -201,12 +185,12 @@ class LoginView extends GetView<LoginController> {
                             height: 50,
                             width: 50,
                             decoration: BoxDecoration(
-                              color: appBrandBlue,
+                              color: primaryColor2,
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            child: const Icon(
+                            child: Icon(
                               Icons.fingerprint,
-                              color: Colors.white,
+                              color: primaryColor1,
                               size: 30,
                             )),
                       ),
