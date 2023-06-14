@@ -1,0 +1,19 @@
+Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: btnRed,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 14, vertical: 5),
+                      child: Text(
+                        "free",
+                        style:
+                            mediumText10.copyWith(fontSize: 10, color: kWhite),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              
