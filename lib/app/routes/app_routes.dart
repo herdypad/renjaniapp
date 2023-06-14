@@ -8,6 +8,7 @@ abstract class Routes {
   static const SPLASH_SCREEN = _Paths.SPLASH_SCREEN;
   static const HOME = _Paths.HOME;
   static const API_LOG = _Paths.API_LOG;
+  static const LOGIN = _Paths.LOGIN;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const SPLASH_SCREEN = '/splash-screen';
   static const HOME = '/home';
   static const API_LOG = '/api-log';
+  static const LOGIN = '/login';
 }

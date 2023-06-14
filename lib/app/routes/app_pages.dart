@@ -5,6 +5,8 @@ import '../modules/api_log/views/api_log_view.dart';
 import '../modules/blocked_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/login/bindings/login_binding.dart';
+import '../modules/login/views/login_view.dart';
 import '../modules/splash_screen_view.dart';
 import '../modules/under_development.dart';
 
@@ -37,6 +39,11 @@ class AppPages {
       name: _Paths.API_LOG,
       page: () => const ApiLogView(),
       binding: ApiLogBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOGIN,
+      page: () => const LoginView(),
+      binding: LoginBinding(),
     ),
   ];
 }
