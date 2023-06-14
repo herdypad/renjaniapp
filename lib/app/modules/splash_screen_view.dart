@@ -33,7 +33,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
 
   Future<void> checkRoute() async {
     await Future.delayed(const Duration(milliseconds: 2000));
-    Get.offNamed(Routes.HOME);
+    Get.offNamed(Routes.LOGIN);
     // await AppCycleService().checkTokenAndRoute();
   }
 
