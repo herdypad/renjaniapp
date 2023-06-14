@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:renjani/app/routes/app_pages.dart';
+import 'package:renjani/themes.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -13,10 +15,22 @@ class HomeView extends GetView<HomeController> {
         title: const Text('HomeView'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
+      body: Center(
+        child: TextButton(
+          style: TextButton.styleFrom(
+            backgroundColor: primaryColor1,
+          ),
+          onPressed: () {
+            Navigator.of(context).pushNamedAndRemoveUntil(
+                Routes.PENGUMUMAN_VIEW, (route) => false,
+                arguments: Routes.PENGUMUMAN_VIEW);
+          },
+          child: const Text(
+            "Login",
+            style: TextStyle(
+              color: Color(0xffffffff),
+            ),
+          ),
         ),
       ),
     );

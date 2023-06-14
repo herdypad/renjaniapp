@@ -45,6 +45,8 @@ FontWeight medium = FontWeight.w500;
 FontWeight semiBold = FontWeight.w600;
 FontWeight bold = FontWeight.w700;
 
+const double kBorderRadius = 16.0;
+
 Color appBrandBlue = const Color(0xff212c5f);
 Color appBrandYellow = const Color(0xffffc91b);
 Color appBrandYellow2 = const Color(0xffffe804);

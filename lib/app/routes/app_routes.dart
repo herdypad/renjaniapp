@@ -9,6 +9,7 @@ abstract class Routes {
   static const HOME = _Paths.HOME;
   static const API_LOG = _Paths.API_LOG;
   static const LOGIN = _Paths.LOGIN;
+  static const PENGUMUMAN_VIEW = _Paths.PENGUMUMAN_VIEW;
 }
 
 abstract class _Paths {
@@ -19,4 +20,5 @@ abstract class _Paths {
   static const HOME = '/home';
   static const API_LOG = '/api-log';
   static const LOGIN = '/login';
+  static const PENGUMUMAN_VIEW = '/pengumuman-view';
 }
