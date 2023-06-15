@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../../themes.dart';
-import '../controllers/pengumuman_view_controller.dart';
+import '../controllers/pengumuman_controller.dart';
 
 class DetailMasjidView extends GetView<PengumumanViewController> {
   // const DetailMasjidView({Key? key}) : super(key: key);

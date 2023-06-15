@@ -21,7 +21,10 @@ class NavBar extends StatelessWidget {
               'User Setting',
               style: mediumText12.copyWith(color: kWhite),
             ),
-            onTap: () => null,
+            onTap: () => {
+              Navigator.of(context).pushNamed(Routes.USER_PROFILE,
+                  arguments: Routes.USER_PROFILE)
+            },
           ),
           Divider(
             color: primaryColor2,
