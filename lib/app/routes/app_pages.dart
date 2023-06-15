@@ -9,10 +9,12 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/pelatihan/bindings/pelatihan_binding.dart';
 import '../modules/pelatihan/views/pelatihan_view.dart';
-import '../modules/pengumuman_view/bindings/pengumuman_view_binding.dart';
-import '../modules/pengumuman_view/views/pengumuman_view.dart';
+import '../modules/pengumuman/bindings/pengumuman_binding.dart';
+import '../modules/pengumuman/views/pengumuman_view.dart';
 import '../modules/splash_screen_view.dart';
 import '../modules/under_development.dart';
+import '../modules/user_profile/bindings/user_profile_binding.dart';
+import '../modules/user_profile/views/user_profile_view.dart';
 
 part 'app_routes.dart';
 
@@ -58,6 +60,11 @@ class AppPages {
       name: _Paths.PELATIHAN,
       page: () => const PelatihanView(),
       binding: PelatihanBinding(),
+    ),
+    GetPage(
+      name: _Paths.USER_PROFILE,
+      page: () => const UserProfileView(),
+      binding: UserProfileBinding(),
     ),
   ];
 }

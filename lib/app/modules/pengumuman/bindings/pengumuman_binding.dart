@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../controllers/pengumuman_view_controller.dart';
+import '../controllers/pengumuman_controller.dart';
 
 class PengumumanViewBinding extends Bindings {
   @override
