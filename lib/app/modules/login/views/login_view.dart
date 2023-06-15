@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -174,12 +175,12 @@ class LoginView extends GetView<LoginController> {
                       InkWell(
                         onTap: () {
                           Navigator.of(context).pushNamedAndRemoveUntil(
-                              Routes.LOGIN, (route) => false,
-                              arguments: Routes.LOGIN);
+                              Routes.HOME, (route) => false,
+                              arguments: Routes.HOME);
                         },
                         child: Container(
-                            height: 50,
-                            width: 50,
+                            height: 50.h,
+                            width: 50.w,
                             decoration: BoxDecoration(
                               color: primaryColor2,
                               borderRadius: BorderRadius.circular(12),

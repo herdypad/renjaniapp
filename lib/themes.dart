@@ -6,6 +6,7 @@ Color primaryColor1 = Color(0xFF212C5F);
 Color primaryColor2 = Color(0xFFFFC523);
 Color primaryColor3 = Color(0xFF7281A1);
 Color primaryColor4 = Color(0xFFFC4C4C4);
+Color primaryColor5 = Color(0xFFD1E4F9);
 
 Color kBg = Color(0xFFF1F6F9);
 Color kWhite = Color(0xFFFFFFFF);
