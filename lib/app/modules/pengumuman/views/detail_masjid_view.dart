@@ -155,7 +155,8 @@ class DetailMasjidView extends GetView<PengumumanViewController> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(9),
                             image: DecorationImage(
-                                image: AssetImage('assets/images/home0.png'),
+                                image: NetworkImage(
+                                    'https://www.diamondartclub.com/cdn/shop/collections/SpongeBob_SquarePants.jpg?v=1657679842'),
                                 fit: BoxFit.cover),
                             color: primaryColor1,
                           ),
@@ -167,7 +168,8 @@ class DetailMasjidView extends GetView<PengumumanViewController> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(9),
                             image: DecorationImage(
-                                image: AssetImage('assets/images/home7.png'),
+                                image: NetworkImage(
+                                    'https://www.diamondartclub.com/cdn/shop/collections/SpongeBob_SquarePants.jpg?v=1657679842'),
                                 fit: BoxFit.cover),
                             color: primaryColor1,
                           ),
@@ -179,7 +181,8 @@ class DetailMasjidView extends GetView<PengumumanViewController> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(9),
                             image: DecorationImage(
-                                image: AssetImage('assets/images/home4.png'),
+                                image: NetworkImage(
+                                    'https://www.diamondartclub.com/cdn/shop/collections/SpongeBob_SquarePants.jpg?v=1657679842'),
                                 fit: BoxFit.cover),
                             color: primaryColor1,
                           ),
