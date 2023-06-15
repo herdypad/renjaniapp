@@ -24,6 +24,9 @@ class TabBeranda extends GetView<BerandaController> {
       home_item_header(
           urlImage:
               "https://i0.wp.com/koranbanjar.net/wp-content/uploads/2021/05/INFO-PAJAK.jpg?fit=500%2C363&ssl=1"),
+      home_item_header(
+          urlImage:
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOQmMvUr4Nxc7qtdLD1stHRy_omKbMw0virQ&usqp=CAU"),
     ];
     int currentIndex = 1;
     Widget indicator(int index) {
