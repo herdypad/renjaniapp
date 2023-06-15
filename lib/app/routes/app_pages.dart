@@ -7,6 +7,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/pelatihan/bindings/pelatihan_binding.dart';
+import '../modules/pelatihan/views/pelatihan_view.dart';
 import '../modules/pengumuman_view/bindings/pengumuman_view_binding.dart';
 import '../modules/pengumuman_view/views/pengumuman_view.dart';
 import '../modules/splash_screen_view.dart';
@@ -51,6 +53,11 @@ class AppPages {
       name: _Paths.PENGUMUMAN_VIEW,
       page: () => const PengumumanViewView(),
       binding: PengumumanViewBinding(),
+    ),
+    GetPage(
+      name: _Paths.PELATIHAN,
+      page: () => const PelatihanView(),
+      binding: PelatihanBinding(),
     ),
   ];
 }
