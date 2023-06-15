@@ -38,12 +38,8 @@ class LoginView extends GetView<LoginController> {
                     height: 100,
                   ),
                   Center(
-                      child: SvgPicture.asset('assets/icons/icon-launcer.svg',
-                          height: 70.95, width: 70)),
-                  const SizedBox(height: 10),
-                  Center(
                       child: Image.asset(
-                    'assets/icons/icon-launcer.png',
+                    'assets/icons/icon_app.png',
                     scale: 4,
                   )),
                   // Center(
