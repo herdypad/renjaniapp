@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
+
 class LoginController extends GetxController {
   //TODO: Implement LoginController
 
@@ -8,7 +10,6 @@ class LoginController extends GetxController {
   void onInit() {
     super.onInit();
   }
-  
 
   @override
   void onReady() {
@@ -20,5 +21,9 @@ class LoginController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  Future<void> login() async {
+    //login logic
+
+    Get.offNamed(Routes.HOME);
+  }
 }

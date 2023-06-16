@@ -15,35 +15,40 @@ class item_card_large extends StatelessWidget {
       children: [
         Container(
           width: 165.w,
-          height: 210.h,
+          height: 243.h,
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: NetworkImage(
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOQmMvUr4Nxc7qtdLD1stHRy_omKbMw0virQ&usqp=CAU"),
-                  fit: BoxFit.fill),
+                      "https://ortax.org/wp-content/uploads/2022/07/Untitled-2-1024x576.jpg"),
+                  fit: BoxFit.cover),
               color: primaryColor1,
               borderRadius: BorderRadius.circular(11)),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "13 November 2020 ",
-                        style: mediumText11.copyWith(
-                            color: kWhite.withOpacity(0.6)),
-                      ),
-                      Text(
-                        "Hari Pajak",
-                        style: mediumText12.copyWith(
-                            color: kWhite.withOpacity(0.6)),
-                      ),
-                    ],
+                Container(
+                  width: Get.width,
+                  color: Colors.black.withOpacity(0.5),
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "13 November 2020",
+                          style: mediumText9.copyWith(
+                              color: kWhite.withOpacity(0.6)),
+                        ),
+                        Text(
+                          "Hari Pajak",
+                          style: mediumText12.copyWith(
+                              color: kWhite.withOpacity(0.6)),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Container(

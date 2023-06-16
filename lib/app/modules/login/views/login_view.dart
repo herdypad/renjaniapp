@@ -127,35 +127,7 @@ class LoginView extends GetView<LoginController> {
                             backgroundColor: primaryColor2,
                           ),
                           onPressed: () {
-                            Navigator.of(context).pushNamedAndRemoveUntil(
-                                Routes.HOME, (route) => false,
-                                arguments: Routes.HOME);
-
-                            // return;
-                            // String _user_id = _user_id_controller.text.trim();
-                            // String _password = _password_controller.text.trim();
-
-                            // if (_user_id.isEmpty) {
-                            //   showCustomSnackBar("User id kosong", context,
-                            //       isError: true);
-                            // } else if (_password.isEmpty) {
-                            //   showCustomSnackBar("Password kosong", context,
-                            //       isError: true);
-                            // } else {
-                            //   authProvider
-                            //       .login(_user_id, _password)
-                            //       .then((status) {
-                            //     if (status.isSuccess) {
-                            //       Navigator.of(context).pushNamedAndRemoveUntil(
-                            //           RouteHelper.home, (route) => false,
-                            //           arguments: HomeScreen());
-                            //     } else {
-                            //       showCustomSnackBar(
-                            //           "Login Gagal / Username tidak cocok",
-                            //           context);
-                            //     }
-                            //   });
-                            // }
+                            controller.login();
                           },
                           child: Text(
                             "Login",
