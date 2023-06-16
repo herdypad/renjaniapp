@@ -14,6 +14,7 @@ Color kGrey = Color(0xFFABABAB);
 Color kItemProfile = Color(0xFFF1F6F9);
 
 Color btnRed = Color(0xFFF63B3B);
+Color btnPrimary = Color(0xFFD1E4F9);
 
 // SEMIBOLD TEXT
 TextStyle semiBoldText24 =

@@ -14,18 +14,19 @@ class BerandaContentMain extends GetView<BerandaController> {
   Widget build(BuildContext context) {
     Column item_title(title, select) {
       return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             title,
             style: mediumText14.copyWith(
-                color: select == 0 ? primaryColor2 : primaryColor3),
+                color: select == 0 ? primaryColor1 : primaryColor2),
           ),
           Container(
-            width: select == 0 ? 70 : 0,
+            width: 70,
             height: 5,
             decoration: BoxDecoration(
-              color: primaryColor1,
+              color:
+                  select == 0 ? primaryColor1 : primaryColor1.withOpacity(0.0),
               borderRadius: BorderRadius.circular(9),
             ),
           )
@@ -90,16 +91,16 @@ class BerandaContentMain extends GetView<BerandaController> {
             children: [
               InkWell(
                 onTap: () {
-                  controller.statusEvent(1);
-                  controller.statusBerita(0);
+                  controller.statusEvent(0);
+                  controller.statusBerita(1);
                 },
                 child: item_title("Event", controller.statusEvent.value),
               ),
               SizedBox(width: 40.w),
               InkWell(
                 onTap: () {
-                  controller.statusEvent(0);
-                  controller.statusBerita(1);
+                  controller.statusEvent(1);
+                  controller.statusBerita(0);
                 },
                 child: item_title("Berita", controller.statusBerita.value),
               ),
@@ -118,7 +119,7 @@ class BerandaContentMain extends GetView<BerandaController> {
             ],
           ),
           SizedBox(height: 9.h),
-          controller.statusEvent == 0 ? Item_event() : Item_berita(),
+          controller.statusEvent == 0 ? Item_berita() : Item_event(),
         ],
       );
     });

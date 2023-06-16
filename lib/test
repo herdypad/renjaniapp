@@ -1,19 +1,61 @@
+//image border
 Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: btnRed,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 14, vertical: 5),
-                      child: Text(
-                        "free",
-                        style:
-                            mediumText10.copyWith(fontSize: 10, color: kWhite),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                            height: 70,
+                            width: 97.w,
+                            decoration: BoxDecoration(
+                                color: kWhite,
+                                borderRadius: BorderRadius.circular(6),
+                                image: DecorationImage(
+                                    image:
+                                    NetworkImage(
+                                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOQmMvUr4Nxc7qtdLD1stHRy_omKbMw0virQ&usqp=CAU"),
+                                  fit: BoxFit.fill),),
+                          ),
 
-              
+
+//text
+Text(
+    "Romadhon event",
+    style: mediumText14.copyWith(
+        fontSize: 14.sp, color: kWhite),
+  ),
+
+ //sizebox
+  SizedBox(width: 7), 
+
+
+
+  //botton text
+    InkWell(
+                              onTap: () {
+                                showPopUpInfo(
+                                  title: 'Congratulation',
+                                  description:
+                                      'you have successfully registered \n Check your Event on notification',
+                                  onPress: () {
+                                    Get
+                                      ..back()
+                                      ..back();
+                                  },
+                                );
+                              },
+                              child: Container(
+                                width: Get.width,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(14),
+                                  color: primaryColor2,
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 30.w, vertical: 9),
+                                  child: Center(
+                                    child: Text(
+                                      "Register",
+                                      style:
+                                          mediumText14.copyWith(color: kWhite),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          

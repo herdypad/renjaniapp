@@ -70,7 +70,9 @@ class NavBar extends StatelessWidget {
               'FAQ',
               style: mediumText12.copyWith(color: kWhite),
             ),
+
             onTap: () => {Get.toNamed(Routes.FAQ)},
+
           ),
           ListTile(
             leading: Icon(

@@ -18,11 +18,13 @@ dependencies:
   carousel_slider: ^4.0.0
 
 
+
   flutter: 
     sdk: flutter
   flutter_svg: ^2.0.7
   flutter_widget_from_html_core: ^0.10.1
   font_awesome_flutter: ^10.4.0
+  flutter_staggered_grid_view: ^0.6.2
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
@@ -40,7 +42,6 @@ flutter_icons:
   ios: true
   image_path: "assets/icons/icon-launcer.png"
   min_sdk_android: 16
-
 
 
 flutter: 
