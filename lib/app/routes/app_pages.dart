@@ -2,7 +2,13 @@ import 'package:get/get.dart';
 
 import '../modules/api_log/bindings/api_log_binding.dart';
 import '../modules/api_log/views/api_log_view.dart';
+import '../modules/berita/bindings/berita_binding.dart';
+import '../modules/berita/views/berita_view.dart';
 import '../modules/blocked_view.dart';
+import '../modules/event/bindings/event_binding.dart';
+import '../modules/event/views/event_view.dart';
+import '../modules/faq/bindings/faq_binding.dart';
+import '../modules/faq/views/faq_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -65,6 +71,21 @@ class AppPages {
       name: _Paths.USER_PROFILE,
       page: () => const UserProfileView(),
       binding: UserProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.EVENT,
+      page: () => const EventView(),
+      binding: EventBinding(),
+    ),
+    GetPage(
+      name: _Paths.BERITA,
+      page: () => const BeritaView(),
+      binding: BeritaBinding(),
+    ),
+    GetPage(
+      name: _Paths.FAQ,
+      page: () => const FaqView(),
+      binding: FaqBinding(),
     ),
   ];
 }
