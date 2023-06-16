@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 
 import 'package:get/get.dart';
 
 import '../../../../themes.dart';
 import '../controllers/pengumuman_controller.dart';
 
-class DetailMasjidView extends GetView<PengumumanViewController> {
+class DetailGaleriView extends GetView<PengumumanViewController> {
   // const DetailMasjidView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -65,82 +66,38 @@ class DetailMasjidView extends GetView<PengumumanViewController> {
                     'Lomba Tutur Pajak 2022 “Muda Berkeasi Membangun Negeri”',
                     style: semiBoldText16,
                   ),
-
                   SizedBox(height: 9.h),
-                  Text(
-                    "Grilya adalah website jual beli baju dan aksesoris untuk perempuan yang di design dengan konsep modern dan juga elgant. terdepat banyak fiture yang di sediakan di grilya.co dengan mempermudah anda untuk berjualan fashion  yang trendy Load more",
-                    style: mediumText11.copyWith(
-                        color: primaryColor2.withOpacity(0.4)),
-                  ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(9),
-                          color: kWhite,
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 10.w, vertical: 10),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.picture_as_pdf,
-                                size: 16.0,
-                                color: primaryColor3,
-                              ),
-                              Text(
-                                " juknis.pdf",
-                                style: mediumText12.copyWith(
-                                    fontSize: 10, color: primaryColor3),
-                              ),
-                            ],
-                          ),
-                        ),
+                      Icon(
+                        Icons.calendar_month,
+                        color: primaryColor3,
+                        size: 15,
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(9),
-                          color: kWhite,
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 10.w, vertical: 10),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.call,
-                                size: 16.0,
-                                color: primaryColor3,
-                              ),
-                              Text(
-                                " 60897876654",
-                                style: mediumText12.copyWith(
-                                    fontSize: 10, color: primaryColor3),
-                              ),
-                            ],
-                          ),
-                        ),
+                      SizedBox(
+                        width: 3.w,
+                      ),
+                      Text(
+                        'Created 2023-09-10 WIB',
+                        style: mediumText9.copyWith(color: primaryColor3),
                       ),
                     ],
                   ),
                   SizedBox(height: 9.h),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      button1("Facilities", 1),
-                      button1("Weekly event", 0),
-                      button1("Jadwal imam", 0),
+                      Flexible(
+                        child: HtmlWidget(
+                          '(Selasa, 21/3) Kanwil DJP Jakarta Selatan II mengukuhkan 74 Relawan Pajak yang terdiri dari 68 Relawan Pajak Mahasiswa dan 6 Relawan Pajak Non-Mahasiswa dari kalangan konsultan pajak (IKPI Jakarta Selatan). Pengukuhan ini dilakukan di Aula Edisi 35 Kanwil DJP Jakarta Selatan II, yang sebelumnya diawali dengan pembekalan kepada Relawan Pajak berupa Communication Skills, Pembuatan Konten Pajak, serta Materi Gratifikasi dan Anti-Korupsi.Yeheskiel Minggus Tiranda, Kabid PEP mewakili Kabid P2humas, mengukuhkan Relawan Pajak kepada perwakilan relawan pajak yang telah ditunjuk sebagai koordinator dari masing-masing KPP Pratama serta satu perwakilan dari relawan pajak non-mahasiswa. Pengukuhan ini ditandai dengan pemakaian jaket dan lanyard. Dalam pesannya, Yeheskiel menyampaikan ucapan selamat dan semoga relawan pajak ini dapat memberikan kontribusi dengan turut membantu dalam kegiatan perpajakan.',
+                          key: Key("ANNOUNCEMENT"),
+                          textStyle: mediumText11,
+                        ),
+                      ),
                     ],
                   ),
-                  SizedBox(height: 15.h),
-                  //fasilitas
-
-                  SizedBox(height: 15.h),
-                  //recent
+                  SizedBox(height: 9.h),
                   Text(
-                    "Recent mosque",
+                    "Galeri",
                     style: mediumText14.copyWith(color: primaryColor2),
                   ),
                   SizedBox(height: 15.h),
