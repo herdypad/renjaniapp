@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:renjani/app/routes/app_pages.dart';
 import 'package:renjani/themes.dart';
 
@@ -21,10 +22,7 @@ class NavBar extends StatelessWidget {
               'User Setting',
               style: mediumText12.copyWith(color: kWhite),
             ),
-            onTap: () => {
-              Navigator.of(context).pushNamed(Routes.USER_PROFILE,
-                  arguments: Routes.USER_PROFILE)
-            },
+            onTap: () => {Get.toNamed(Routes.USER_PROFILE)},
           ),
           Divider(
             color: primaryColor2,
@@ -34,20 +32,14 @@ class NavBar extends StatelessWidget {
               'Pengumuman',
               style: mediumText12.copyWith(color: kWhite),
             ),
-            onTap: () => {
-              Navigator.of(context).pushNamed(Routes.PENGUMUMAN_VIEW,
-                  arguments: Routes.PENGUMUMAN_VIEW)
-            },
+            onTap: () => {Get.toNamed(Routes.PENGUMUMAN_VIEW)},
           ),
           ListTile(
             title: Text(
               'Pelatihan',
               style: mediumText12.copyWith(color: kWhite),
             ),
-            onTap: () => {
-              Navigator.of(context)
-                  .pushNamed(Routes.PELATIHAN, arguments: Routes.PELATIHAN)
-            },
+            onTap: () => {Get.toNamed(Routes.PELATIHAN)},
           ),
           ListTile(
             title: Text(
@@ -58,7 +50,7 @@ class NavBar extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              'User Setting',
+              'Survey dan Sertifikat',
               style: mediumText12.copyWith(color: kWhite),
             ),
             onTap: () => null,
@@ -68,7 +60,7 @@ class NavBar extends StatelessWidget {
               'User Setting',
               style: mediumText12.copyWith(color: kWhite),
             ),
-            onTap: () => null,
+            onTap: () => {Get.offNamed(Routes.EVENT)},
           ),
           Divider(
             color: primaryColor2,
@@ -78,7 +70,7 @@ class NavBar extends StatelessWidget {
               'FAQ',
               style: mediumText12.copyWith(color: kWhite),
             ),
-            onTap: () => null,
+            onTap: () => {Get.toNamed(Routes.FAQ)},
           ),
           ListTile(
             leading: Icon(

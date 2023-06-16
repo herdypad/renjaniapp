@@ -25,13 +25,30 @@ class UserProfileView extends GetView<UserProfileController> {
             children: [
               Container(
                 width: double.infinity,
-                height: 280.h,
+                height: 250.h,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('assets/images/bg_profile.png'),
                       fit: BoxFit.cover),
                   color: primaryColor1,
                 ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.all(18.0),
+                      child: Icon(
+                        Icons.arrow_back,
+                        size: 24.0,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsets.all(15.0),
@@ -55,9 +72,39 @@ class UserProfileView extends GetView<UserProfileController> {
                                   "Nurul sayfudin",
                                   style: semiBoldText16,
                                 ),
-                                Text("Online", style: mediumText10),
+                                Text("KPP Pratama Jakarta Setiabudi Enam",
+                                    style: semiBoldText12.copyWith(
+                                        color: primaryColor3)),
+                                Text("nurul_say@gaamail.com",
+                                    style: mediumText10.copyWith(
+                                        color: primaryColor4)),
                                 SizedBox(height: 12.h),
                                 Container(
+                                  padding: EdgeInsets.all(8.0),
+                                  width: 150.w,
+                                  decoration: BoxDecoration(
+                                      color: primaryColor4,
+                                      borderRadius: BorderRadius.circular(27)),
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10),
+                                    child: Column(children: [
+                                      Text(
+                                        "Point Relawan Anda :",
+                                        style: mediumText10.copyWith(
+                                            color: primaryColor3),
+                                      ),
+                                      Text(
+                                        "1000",
+                                        style: semiBoldText12.copyWith(
+                                            color: primaryColor2),
+                                      ),
+                                    ]),
+                                  ),
+                                ),
+                                SizedBox(height: 12.h),
+                                Container(
+                                  height: 55.h,
                                   padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
                                   child: TextFormField(
                                     decoration: InputDecoration(
@@ -74,12 +121,19 @@ class UserProfileView extends GetView<UserProfileController> {
                                             color: primaryColor1,
                                             width: 2,
                                           )),
+                                      enabledBorder: OutlineInputBorder(
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(12)),
+                                          borderSide: BorderSide(
+                                            color: primaryColor4,
+                                          )),
                                       prefixIcon: const Icon(Icons.person),
                                     ),
                                   ),
                                 ),
                                 Container(
                                   padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                                  height: 55.h,
                                   child: TextFormField(
                                     decoration: InputDecoration(
                                       filled: true,
@@ -95,6 +149,12 @@ class UserProfileView extends GetView<UserProfileController> {
                                             color: primaryColor1,
                                             width: 2,
                                           )),
+                                      enabledBorder: OutlineInputBorder(
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(12)),
+                                          borderSide: BorderSide(
+                                            color: primaryColor4,
+                                          )),
                                       prefixIcon:
                                           const Icon(Icons.phone_android),
                                     ),
@@ -102,6 +162,7 @@ class UserProfileView extends GetView<UserProfileController> {
                                 ),
                                 Container(
                                   padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                                  height: 55.h,
                                   child: TextFormField(
                                     decoration: InputDecoration(
                                       filled: true,
@@ -117,6 +178,12 @@ class UserProfileView extends GetView<UserProfileController> {
                                             color: primaryColor1,
                                             width: 2,
                                           )),
+                                      enabledBorder: OutlineInputBorder(
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(12)),
+                                          borderSide: BorderSide(
+                                            color: primaryColor4,
+                                          )),
                                       prefixIcon:
                                           const Icon(FontAwesomeIcons.idCard),
                                     ),
@@ -124,6 +191,7 @@ class UserProfileView extends GetView<UserProfileController> {
                                 ),
                                 Container(
                                   padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                                  height: 55.h,
                                   child: TextFormField(
                                     decoration: InputDecoration(
                                       filled: true,
@@ -139,6 +207,12 @@ class UserProfileView extends GetView<UserProfileController> {
                                             color: primaryColor1,
                                             width: 2,
                                           )),
+                                      enabledBorder: OutlineInputBorder(
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(12)),
+                                          borderSide: BorderSide(
+                                            color: primaryColor4,
+                                          )),
                                       prefixIcon: const Icon(
                                           FontAwesomeIcons.instagram),
                                     ),
@@ -146,6 +220,7 @@ class UserProfileView extends GetView<UserProfileController> {
                                 ),
                                 Container(
                                   padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                                  height: 55.h,
                                   child: TextFormField(
                                     decoration: InputDecoration(
                                       filled: true,
@@ -161,6 +236,12 @@ class UserProfileView extends GetView<UserProfileController> {
                                             color: primaryColor1,
                                             width: 2,
                                           )),
+                                      enabledBorder: OutlineInputBorder(
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(12)),
+                                          borderSide: BorderSide(
+                                            color: primaryColor4,
+                                          )),
                                       prefixIcon:
                                           const Icon(FontAwesomeIcons.tiktok),
                                     ),
@@ -168,6 +249,7 @@ class UserProfileView extends GetView<UserProfileController> {
                                 ),
                                 Container(
                                   padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                                  height: 55.h,
                                   child: TextFormField(
                                     decoration: InputDecoration(
                                       filled: true,
@@ -183,15 +265,18 @@ class UserProfileView extends GetView<UserProfileController> {
                                             color: primaryColor1,
                                             width: 2,
                                           )),
+                                      enabledBorder: OutlineInputBorder(
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(12)),
+                                          borderSide: BorderSide(
+                                            color: primaryColor4,
+                                          )),
                                       prefixIcon: const Icon(
                                           FontAwesomeIcons.addressBook),
                                     ),
                                   ),
                                 ),
                                 SizedBox(height: 12.h),
-                                SizedBox(height: 12.h),
-                                SizedBox(height: 12.h),
-                                SizedBox(height: 22.h),
                               ]),
                             ),
                           ],

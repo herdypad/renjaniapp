@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:renjani/app/modules/pengumuman/views/detail_masjid_view.dart';
+import 'package:renjani/app/modules/pengumuman/views/detail_galeri_view.dart';
 import 'package:renjani/app/modules/pengumuman/views/pengumuman_detail.dart';
 import 'package:renjani/app/routes/app_pages.dart';
 import 'package:renjani/themes.dart';
@@ -114,7 +114,7 @@ class PengumumanViewView extends GetView<PengumumanViewController> {
                                       Navigator.of(context).push(
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  DetailMasjidView()));
+                                                  DetailGaleriView()));
                                     },
                                     child: Text("detail berita"),
                                   ),
