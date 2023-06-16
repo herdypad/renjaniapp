@@ -5,6 +5,9 @@ class BerandaController extends GetxController {
   RxInt statusEvent = 1.obs;
   RxInt statusBerita = 0.obs;
 
+  //header variable
+  RxInt currentIndex = 1.obs;
+
   @override
   void onInit() {
     super.onInit();

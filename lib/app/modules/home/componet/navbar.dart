@@ -78,7 +78,7 @@ class NavBar extends StatelessWidget {
               'FAQ',
               style: mediumText12.copyWith(color: kWhite),
             ),
-            onTap: () => null,
+            onTap: () {},
           ),
           ListTile(
             leading: Icon(
