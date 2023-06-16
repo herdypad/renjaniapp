@@ -71,3 +71,13 @@ Color appGreen = const Color(0xff9ad971);
 Color appBlue = const Color(0xff5ea6e4);
 Color appYellow = const Color(0xffebbe5f);
 Color appRed = const Color(0xffdf836f);
+
+class Shadows {
+  static List<BoxShadow> get universal => [
+        BoxShadow(
+          color: const Color(0xff333333).withOpacity(.13),
+          blurRadius: 5,
+          offset: const Offset(0, 5),
+        ),
+      ];
+}

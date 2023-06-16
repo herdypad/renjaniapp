@@ -22,6 +22,7 @@ class item_card_small extends StatelessWidget {
                       "https://ortax.org/wp-content/uploads/2022/07/Untitled-2-1024x576.jpg"),
                   fit: BoxFit.cover),
               color: primaryColor1,
+              boxShadow: Shadows.universal,
               borderRadius: BorderRadius.circular(11)),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.end,

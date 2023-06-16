@@ -102,7 +102,7 @@ class RankItem extends StatelessWidget {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: NetworkImage(
-                      "https://www.herdy.co.uk/wp/wp-content/uploads/2019/07/BusinessWeek-02-1.jpg"),
+                      "https://img.bleacherreport.net/img/images/photos/002/702/917/hi-res-461825537-lionel-messi-of-fc-barcelona-leaves-the-vicente_crop_exact.jpg?w=1200&h=1200&q=75"),
                 ),
               ),
             ),
@@ -111,7 +111,7 @@ class RankItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Herdyono",
+                      "Abang Mesi",
                       style:
                           mediumText14.copyWith(fontSize: 12.sp, color: kWhite),
                     ),

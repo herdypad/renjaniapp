@@ -15,8 +15,8 @@ class home_item_header extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: 168,
         decoration: BoxDecoration(
-          image:
-              DecorationImage(image: NetworkImage(urlImage), fit: BoxFit.fill),
+          image: DecorationImage(
+              image: NetworkImage(urlImage), fit: BoxFit.fitWidth),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Padding(
