@@ -8,6 +8,7 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      width: 200.w,
       backgroundColor: primaryColor1,
       child: ListView(
         padding: EdgeInsets.zero,
@@ -19,10 +20,10 @@ class NavBar extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              'User Setting',
+              'Branda',
               style: mediumText12.copyWith(color: kWhite),
             ),
-            onTap: () => {Get.toNamed(Routes.USER_PROFILE)},
+            onTap: () => {Get.offNamed(Routes.HOME)},
           ),
           Divider(
             color: primaryColor2,
@@ -46,7 +47,9 @@ class NavBar extends StatelessWidget {
               'Pelaksanaan',
               style: mediumText12.copyWith(color: kWhite),
             ),
-            onTap: () => null,
+            onTap: () {
+              Get.offNamed(Routes.PELAKSANAAN);
+            },
           ),
           ListTile(
             title: Text(
@@ -70,9 +73,7 @@ class NavBar extends StatelessWidget {
               'FAQ',
               style: mediumText12.copyWith(color: kWhite),
             ),
-
             onTap: () => {Get.toNamed(Routes.FAQ)},
-
           ),
           ListTile(
             leading: Icon(

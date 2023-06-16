@@ -1,11 +1,8 @@
 import 'package:get/get.dart';
 
-class BerandaController extends GetxController {
-  RxInt idSelect1 = 0.obs;
-  RxInt statusEventBerita = 0.obs;
-
+class PelaksanaanController extends GetxController {
   //header variable
-  RxInt currentIndex = 0.obs;
+  RxInt currentIndexMenu = 0.obs;
 
   @override
   void onInit() {
@@ -20,5 +17,9 @@ class BerandaController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+  }
+
+  void changeIndexMenu(int index) {
+    currentIndexMenu(index);
   }
 }

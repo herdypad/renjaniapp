@@ -1,3 +1,5 @@
+// ignore_for_file: unrelated_type_equality_checks
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -12,7 +14,7 @@ class BerandaContentMain extends GetView<BerandaController> {
 
   @override
   Widget build(BuildContext context) {
-    Column item_title(title, select) {
+    Column itemTitle(title, select) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -34,7 +36,7 @@ class BerandaContentMain extends GetView<BerandaController> {
       );
     }
 
-    Row Item_event() {
+    Row itemEvent() {
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -62,7 +64,7 @@ class BerandaContentMain extends GetView<BerandaController> {
       );
     }
 
-    Row Item_berita() {
+    Row itemBerita() {
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -91,18 +93,18 @@ class BerandaContentMain extends GetView<BerandaController> {
             children: [
               InkWell(
                 onTap: () {
-                  controller.statusEvent(0);
-                  controller.statusBerita(1);
+                  controller.statusEventBerita(0);
                 },
-                child: item_title("Event", controller.statusEvent.value),
+                child: itemTitle(
+                    "Event", controller.statusEventBerita.value == 0 ? 0 : 1),
               ),
               SizedBox(width: 40.w),
               InkWell(
                 onTap: () {
-                  controller.statusEvent(1);
-                  controller.statusBerita(0);
+                  controller.statusEventBerita(1);
                 },
-                child: item_title("Berita", controller.statusBerita.value),
+                child: itemTitle(
+                    "Berita", controller.statusEventBerita.value == 1 ? 0 : 1),
               ),
             ],
           ),
@@ -119,7 +121,7 @@ class BerandaContentMain extends GetView<BerandaController> {
             ],
           ),
           SizedBox(height: 9.h),
-          controller.statusEvent == 0 ? Item_berita() : Item_event(),
+          controller.statusEventBerita == 0 ? itemBerita() : itemEvent(),
         ],
       );
     });

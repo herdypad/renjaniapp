@@ -15,10 +15,10 @@ class BerandaSliderHeader extends GetView<BerandaController> {
     List cards = [
       home_item_header(
           urlImage:
-              "https://i0.wp.com/koranbanjar.net/wp-content/uploads/2021/05/INFO-PAJAK.jpg?fit=500%2C363&ssl=1"),
+              "https://ddtc-cdn1.sgp1.digitaloceanspaces.com/view/200225035627relawanpajakjakpus.jpg"),
       home_item_header(
           urlImage:
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOQmMvUr4Nxc7qtdLD1stHRy_omKbMw0virQ&usqp=CAU"),
+              "https://www.pajak.com/storage/2023/02/relawan-pajak-www.jpg"),
       home_item_header(
           urlImage:
               "https://i0.wp.com/koranbanjar.net/wp-content/uploads/2021/05/INFO-PAJAK.jpg?fit=500%2C363&ssl=1"),
