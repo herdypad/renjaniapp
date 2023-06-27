@@ -107,25 +107,26 @@ class UserProfileView extends GetView<UserProfileController> {
                                   padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
                                   child: TextFormField(
                                     decoration: InputDecoration(
-                                      filled: true,
-                                      fillColor: appGrey2,
-                                      labelText: "NIK",
+                                      filled: false,
+                                      // fillColor: appGrey2,
+                                      // labelText: "NIK",
+                                      hintText: "NIK",
                                       border: UnderlineInputBorder(
                                         borderRadius: BorderRadius.circular(12),
                                       ),
-                                      focusedBorder: OutlineInputBorder(
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(12)),
-                                          borderSide: BorderSide(
-                                            color: primaryColor1,
-                                            width: 2,
-                                          )),
-                                      enabledBorder: OutlineInputBorder(
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(12)),
-                                          borderSide: BorderSide(
-                                            color: primaryColor4,
-                                          )),
+                                      // focusedBorder: OutlineInputBorder(
+                                      //     borderRadius: const BorderRadius.all(
+                                      //         Radius.circular(12)),
+                                      //     borderSide: BorderSide(
+                                      //       color: kWhite,
+                                      //       width: 2,
+                                      //     )),
+                                      // enabledBorder: OutlineInputBorder(
+                                      //     borderRadius: const BorderRadius.all(
+                                      //         Radius.circular(12)),
+                                      //     borderSide: BorderSide(
+                                      //       color: kWhite,
+                                      //     )),
                                       prefixIcon: const Icon(Icons.person),
                                     ),
                                   ),
@@ -135,25 +136,26 @@ class UserProfileView extends GetView<UserProfileController> {
                                   height: 55.h,
                                   child: TextFormField(
                                     decoration: InputDecoration(
-                                      filled: true,
+                                      filled: false,
                                       fillColor: appGrey2,
-                                      labelText: "No Handphone",
+                                      // labelText: "No Handphone",
+                                      hintText: "No Handphone",
                                       border: UnderlineInputBorder(
                                         borderRadius: BorderRadius.circular(12),
                                       ),
-                                      focusedBorder: OutlineInputBorder(
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(12)),
-                                          borderSide: BorderSide(
-                                            color: primaryColor1,
-                                            width: 2,
-                                          )),
-                                      enabledBorder: OutlineInputBorder(
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(12)),
-                                          borderSide: BorderSide(
-                                            color: primaryColor4,
-                                          )),
+                                      // focusedBorder: OutlineInputBorder(
+                                      //     borderRadius: const BorderRadius.all(
+                                      //         Radius.circular(12)),
+                                      //     borderSide: BorderSide(
+                                      //       color: kWhite,
+                                      //       width: 2,
+                                      //     )),
+                                      // enabledBorder: OutlineInputBorder(
+                                      //     borderRadius: const BorderRadius.all(
+                                      //         Radius.circular(12)),
+                                      //     borderSide: BorderSide(
+                                      //       color: kWhite,
+                                      //     )),
                                       prefixIcon:
                                           const Icon(Icons.phone_android),
                                     ),
@@ -164,25 +166,26 @@ class UserProfileView extends GetView<UserProfileController> {
                                   height: 55.h,
                                   child: TextFormField(
                                     decoration: InputDecoration(
-                                      filled: true,
+                                      filled: false,
                                       fillColor: appGrey2,
-                                      labelText: "NIM",
+                                      // labelText: "NIM",
+                                      hintText: "NIM",
                                       border: UnderlineInputBorder(
                                         borderRadius: BorderRadius.circular(12),
                                       ),
-                                      focusedBorder: OutlineInputBorder(
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(12)),
-                                          borderSide: BorderSide(
-                                            color: primaryColor1,
-                                            width: 2,
-                                          )),
-                                      enabledBorder: OutlineInputBorder(
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(12)),
-                                          borderSide: BorderSide(
-                                            color: primaryColor4,
-                                          )),
+                                      // focusedBorder: OutlineInputBorder(
+                                      //     borderRadius: const BorderRadius.all(
+                                      //         Radius.circular(12)),
+                                      //     borderSide: BorderSide(
+                                      //       color: kWhite,
+                                      //       width: 2,
+                                      //     )),
+                                      // enabledBorder: OutlineInputBorder(
+                                      //     borderRadius: const BorderRadius.all(
+                                      //         Radius.circular(12)),
+                                      //     borderSide: BorderSide(
+                                      //       color: kWhite,
+                                      //     )),
                                       prefixIcon:
                                           const Icon(FontAwesomeIcons.idCard),
                                     ),
@@ -193,25 +196,26 @@ class UserProfileView extends GetView<UserProfileController> {
                                   height: 55.h,
                                   child: TextFormField(
                                     decoration: InputDecoration(
-                                      filled: true,
+                                      filled: false,
                                       fillColor: appGrey2,
-                                      labelText: "Instagram",
+                                      // labelText: "Instagram",
+                                      hintText: "Instagram",
                                       border: UnderlineInputBorder(
                                         borderRadius: BorderRadius.circular(12),
                                       ),
-                                      focusedBorder: OutlineInputBorder(
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(12)),
-                                          borderSide: BorderSide(
-                                            color: primaryColor1,
-                                            width: 2,
-                                          )),
-                                      enabledBorder: OutlineInputBorder(
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(12)),
-                                          borderSide: BorderSide(
-                                            color: primaryColor4,
-                                          )),
+                                      // focusedBorder: OutlineInputBorder(
+                                      //     borderRadius: const BorderRadius.all(
+                                      //         Radius.circular(12)),
+                                      //     borderSide: BorderSide(
+                                      //       color: kWhite,
+                                      //       width: 2,
+                                      //     )),
+                                      // enabledBorder: OutlineInputBorder(
+                                      //     borderRadius: const BorderRadius.all(
+                                      //         Radius.circular(12)),
+                                      //     borderSide: BorderSide(
+                                      //       color: kWhite,
+                                      //     )),
                                       prefixIcon: const Icon(
                                           FontAwesomeIcons.instagram),
                                     ),
@@ -222,25 +226,26 @@ class UserProfileView extends GetView<UserProfileController> {
                                   height: 55.h,
                                   child: TextFormField(
                                     decoration: InputDecoration(
-                                      filled: true,
+                                      filled: false,
                                       fillColor: appGrey2,
-                                      labelText: "Tiktok",
+                                      // labelText: "Tiktok",
+                                      hintText: "Tiktok",
                                       border: UnderlineInputBorder(
                                         borderRadius: BorderRadius.circular(12),
                                       ),
-                                      focusedBorder: OutlineInputBorder(
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(12)),
-                                          borderSide: BorderSide(
-                                            color: primaryColor1,
-                                            width: 2,
-                                          )),
-                                      enabledBorder: OutlineInputBorder(
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(12)),
-                                          borderSide: BorderSide(
-                                            color: primaryColor4,
-                                          )),
+                                      // focusedBorder: OutlineInputBorder(
+                                      //     borderRadius: const BorderRadius.all(
+                                      //         Radius.circular(12)),
+                                      //     borderSide: BorderSide(
+                                      //       color: kWhite,
+                                      //       width: 2,
+                                      //     )),
+                                      // enabledBorder: OutlineInputBorder(
+                                      //     borderRadius: const BorderRadius.all(
+                                      //         Radius.circular(12)),
+                                      //     borderSide: BorderSide(
+                                      //       color: kWhite,
+                                      //     )),
                                       prefixIcon:
                                           const Icon(FontAwesomeIcons.tiktok),
                                     ),
@@ -248,28 +253,29 @@ class UserProfileView extends GetView<UserProfileController> {
                                 ),
                                 Container(
                                   padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
-                                  height: 55.h,
+                                  height: 100.h,
                                   child: TextFormField(
                                     decoration: InputDecoration(
-                                      filled: true,
+                                      filled: false,
                                       fillColor: appGrey2,
-                                      labelText: "Alamat Domisili",
+                                      // labelText: "Alamat Domisili",
+                                      hintText: "Alamat Domisili",
                                       border: UnderlineInputBorder(
                                         borderRadius: BorderRadius.circular(12),
                                       ),
-                                      focusedBorder: OutlineInputBorder(
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(12)),
-                                          borderSide: BorderSide(
-                                            color: primaryColor1,
-                                            width: 2,
-                                          )),
-                                      enabledBorder: OutlineInputBorder(
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(12)),
-                                          borderSide: BorderSide(
-                                            color: primaryColor4,
-                                          )),
+                                      // focusedBorder: OutlineInputBorder(
+                                      //     borderRadius: const BorderRadius.all(
+                                      //         Radius.circular(12)),
+                                      //     borderSide: BorderSide(
+                                      //       color: kWhite,
+                                      //       width: 2,
+                                      //     )),
+                                      // enabledBorder: OutlineInputBorder(
+                                      //     borderRadius: const BorderRadius.all(
+                                      //         Radius.circular(12)),
+                                      //     borderSide: BorderSide(
+                                      //       color: kWhite,
+                                      //     )),
                                       prefixIcon: const Icon(
                                           FontAwesomeIcons.addressBook),
                                     ),
