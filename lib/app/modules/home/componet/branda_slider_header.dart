@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import '../../../../themes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../themes.dart';
 import '../controllers/beranda_controller.dart';
 import 'home_item_header.dart';
 

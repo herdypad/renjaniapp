@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:renjani/app/routes/app_pages.dart';
-import 'package:renjani/themes.dart';
+
+import '../../../../services/app_cycle_service.dart';
+import '../../../../themes.dart';
 
 class NavBar extends StatelessWidget {
   @override
@@ -86,9 +88,7 @@ class NavBar extends StatelessWidget {
               style: mediumText12.copyWith(color: kWhite),
             ),
             onTap: () => {
-              Navigator.of(context).pushNamedAndRemoveUntil(
-                  Routes.LOGIN, (route) => false,
-                  arguments: Routes.LOGIN)
+              AppCycleService().onUserLogout(),
             },
           ),
         ],

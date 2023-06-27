@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../themes.dart';
+import '../../../../themes.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({

@@ -1,11 +1,13 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:renjani/app/routes/app_pages.dart';
-import 'package:renjani/themes.dart';
+import 'package:renjani/widgets/others/show_dialog.dart';
 
+import '../../../../themes.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
@@ -14,9 +16,6 @@ class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     final ScrollController _scrollController = ScrollController();
-    bool passToggle = true;
-    TextEditingController _user_id_controller = TextEditingController();
-    TextEditingController _password_controller = TextEditingController();
 
     return Scaffold(
       backgroundColor: primaryColor1,
@@ -50,11 +49,11 @@ class LoginView extends GetView<LoginController> {
                     height: 20,
                   ),
                   TextFormField(
-                    controller: _user_id_controller,
+                    controller: controller.cUsername,
                     decoration: InputDecoration(
                       filled: true,
+                      hintText: "User ID",
                       fillColor: Colors.white,
-                      labelText: "User ID",
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
@@ -78,11 +77,11 @@ class LoginView extends GetView<LoginController> {
                     height: 20,
                   ),
                   TextFormField(
-                    controller: _password_controller,
+                    controller: controller.cPassword,
                     keyboardType: TextInputType.visiblePassword,
-                    obscureText: passToggle,
+                    obscureText: controller.passToggle.value,
                     decoration: InputDecoration(
-                      labelText: "Password",
+                      hintText: "Password",
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
@@ -117,54 +116,56 @@ class LoginView extends GetView<LoginController> {
                   const SizedBox(
                     height: 30,
                   ),
-                  Row(
-                    children: [
-                      Expanded(
-                          child: SizedBox(
-                        height: 49,
-                        child: TextButton(
-                          style: TextButton.styleFrom(
-                            backgroundColor: primaryColor2,
+                  Obx(() {
+                    return Row(
+                      children: [
+                        Expanded(
+                            child: SizedBox(
+                          height: 49,
+                          child: TextButton(
+                            style: TextButton.styleFrom(
+                              backgroundColor: primaryColor2,
+                            ),
+                            onPressed: () {
+                              controller.login();
+                            },
+                            child: controller.isLoading.isFalse
+                                ? Text(
+                                    "Login",
+                                    style: TextStyle(
+                                      color: primaryColor1,
+                                    ),
+                                  )
+                                : Container(
+                                    height: 20.h,
+                                    width: 20.w,
+                                    child: CircularProgressIndicator(
+                                      color: primaryColor1,
+                                    ),
+                                  ),
                           ),
-                          onPressed: () {
-                            controller.login();
+                        )),
+                        SizedBox(width: 20),
+                        InkWell(
+                          onTap: () {
+                            controller.loginFinger();
                           },
-                          child: Text(
-                            "Login",
-                            style: TextStyle(
-                              color: primaryColor1,
-                            ),
-                          ),
+                          child: Container(
+                              height: 50.h,
+                              width: 50.w,
+                              decoration: BoxDecoration(
+                                color: primaryColor2,
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Icon(
+                                Icons.fingerprint,
+                                color: primaryColor1,
+                                size: 30,
+                              )),
                         ),
-                      )
-                          // : Center(
-                          //     child: CircularProgressIndicator(
-                          //     valueColor: AlwaysStoppedAnimation<Color>(
-                          //         appBrandBlue),
-                          //   ))
-                          ),
-                      SizedBox(width: 20),
-                      InkWell(
-                        onTap: () {
-                          Navigator.of(context).pushNamedAndRemoveUntil(
-                              Routes.HOME, (route) => false,
-                              arguments: Routes.HOME);
-                        },
-                        child: Container(
-                            height: 50.h,
-                            width: 50.w,
-                            decoration: BoxDecoration(
-                              color: primaryColor2,
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Icon(
-                              Icons.fingerprint,
-                              color: primaryColor1,
-                              size: 30,
-                            )),
-                      ),
-                    ],
-                  )
+                      ],
+                    );
+                  })
                 ],
               ),
             ),

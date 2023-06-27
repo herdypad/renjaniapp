@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:renjani/themes.dart';
 
+import '../../../../themes.dart';
 import '../controllers/faq_controller.dart';
 
 class FaqView extends GetView<FaqController> {

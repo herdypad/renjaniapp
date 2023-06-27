@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:renjani/themes.dart';
+
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
+
+import '../../../../themes.dart';
 
 class PengumumanDetail extends StatefulWidget {
   final String urlpdf;

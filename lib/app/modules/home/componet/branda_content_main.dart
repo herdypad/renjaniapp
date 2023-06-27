@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:renjani/app/modules/home/componet/item_card_small.dart';
 
 import '../../../../themes.dart';
+
 import '../controllers/beranda_controller.dart';
 import 'item_card_large.dart';
 
