@@ -6,7 +6,6 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 
 import '../app/modules/api_log/models/api_log_model.dart';
-import '../app_config.dart';
 import '../constants/constant.dart';
 import '../utils/app_storage.dart';
 import '../utils/app_utils.dart';
@@ -14,13 +13,16 @@ import '../utils/app_utils.dart';
 enum Method { POST, GET, PUT, DELETE, PATCH }
 
 class ApiService {
+  final tag = "ApiService";
   Dio? _dio;
+
+  final baseUrl = "http://10.244.66.97:7070/";
 
   Future<ApiService> init() async {
     logSys('Api Service Initialized');
     _dio = Dio(
       BaseOptions(
-        baseUrl: AppConfig.baseUrl,
+        baseUrl: baseUrl,
         headers: {'Content-Type': 'application/json'},
       ),
     );
@@ -79,7 +81,7 @@ class ApiService {
     final header = await getHeader(headers: headers, isToken: isToken);
 
     if (_dio == null) {
-      _dio = Dio(BaseOptions(baseUrl: AppConfig.baseUrl, headers: header));
+      _dio = Dio(BaseOptions(baseUrl: baseUrl, headers: header));
       initInterceptors();
     }
 
@@ -149,7 +151,7 @@ class ApiService {
   }) async {
     await ApiLogger().log(
       data: ApiLogModel(
-        url: '${AppConfig.baseUrl}$url',
+        url: '${baseUrl}$url',
         payload: params.toString(),
         response: response.toString(),
         method: method.toString(),

@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 
 import 'package:get/get.dart';
-
 import '../../../../themes.dart';
+
 import '../controllers/pengumuman_controller.dart';
 
 class DetailGaleriView extends GetView<PengumumanViewController> {

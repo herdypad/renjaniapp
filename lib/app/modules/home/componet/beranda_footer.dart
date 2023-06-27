@@ -13,23 +13,24 @@ class BerandaFooter extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 11.h),
+        SizedBox(height: 30.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("Galeri", style: mediumText14.copyWith(color: primaryColor1)),
-            SizedBox(height: 10.h),
-            Row(
-              children: [
-                Text("See all ",
-                    style: mediumText10.copyWith(
-                        color: primaryColor1.withOpacity(0.5))),
-                const Icon(
-                  Icons.navigate_next,
-                  size: 15.0,
-                ),
-              ],
-            ),
+            Text("Galeri",
+                style: semiBoldText14.copyWith(color: primaryColor1)),
+            SizedBox(height: 20.h),
+            // Row(
+            //   children: [
+            //     Text("See all ",
+            //         style: mediumText10.copyWith(
+            //             color: primaryColor1.withOpacity(0.5))),
+            //     const Icon(
+            //       Icons.navigate_next,
+            //       size: 15.0,
+            //     ),
+            //   ],
+            // ),
           ],
         ),
         SingleChildScrollView(
@@ -48,9 +49,9 @@ class BerandaFooter extends StatelessWidget {
 
   Padding Item_list_footer() {
     return Padding(
-      padding: const EdgeInsets.only(left: 8),
+      padding: const EdgeInsets.only(right: 8),
       child: Container(
-        height: 97,
+        height: 150.h,
         width: 237.w,
         decoration: BoxDecoration(
           color: kWhite,

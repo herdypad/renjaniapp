@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:renjani/app/modules/event/views/detail_event_view.dart';
 
 import 'package:renjani/app/modules/home/componet/navbar.dart';
-import 'package:renjani/themes.dart';
+
 import 'package:renjani/utils/image_helper.dart';
 
+import '../../../../themes.dart';
 import '../controllers/event_controller.dart';
 
 class EventView extends GetView<EventController> {

@@ -15,6 +15,7 @@ abstract class Routes {
   static const EVENT = _Paths.EVENT;
   static const BERITA = _Paths.BERITA;
   static const FAQ = _Paths.FAQ;
+  static const PELAKSANAAN = _Paths.PELAKSANAAN;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const EVENT = '/event';
   static const BERITA = '/berita';
   static const FAQ = '/faq';
+  static const PELAKSANAAN = '/pelaksanaan';
 }
