@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:renjani/themes.dart';
+
+import '../../themes.dart';
 
 class BlockedView extends StatelessWidget {
   const BlockedView({Key? key}) : super(key: key);

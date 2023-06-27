@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:renjani/app/modules/home/tab/tab_gallery.dart';
 import 'package:renjani/app/modules/home/tab/tab_rank.dart';
-import 'package:renjani/themes.dart';
 
+import '../../../../themes.dart';
 import '../../../../widgets/custom_bottom_navbar.dart';
 import '../componet/navbar.dart';
 import '../controllers/home_controller.dart';

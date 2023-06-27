@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:renjani/app/routes/app_pages.dart';
-import 'package:renjani/themes.dart';
+import '../../../../themes.dart';
+import '../../services/app_cycle_service.dart';
 
 class SplashScreenView extends StatefulWidget {
   const SplashScreenView({Key? key}) : super(key: key);
@@ -33,8 +34,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
 
   Future<void> checkRoute() async {
     await Future.delayed(const Duration(milliseconds: 2000));
-    Get.offNamed(Routes.LOGIN);
-    // await AppCycleService().checkTokenAndRoute();
+    await AppCycleService().checkTokenAndRoute();
   }
 
   @override
@@ -46,7 +46,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
           duration: const Duration(milliseconds: 1000),
           width: width,
           height: width,
-          child: Image.asset('assets/icons/icon-launcer.png'),
+          child: Image.asset('assets/icons/icon_app.png'),
         ),
       ),
     );

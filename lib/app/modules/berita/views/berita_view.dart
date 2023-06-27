@@ -4,9 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:renjani/app/modules/berita/views/detail_berita_view.dart';
 import 'package:renjani/app/modules/home/componet/navbar.dart';
-import 'package:renjani/themes.dart';
+
 import 'package:renjani/utils/image_helper.dart';
 
+import '../../../../themes.dart';
 import '../controllers/berita_controller.dart';
 
 class BeritaView extends GetView<BeritaController> {
