@@ -54,105 +54,133 @@ class PelatihanView extends GetView<PelatihanController> {
                               {}
                             },
                             child: Container(
-                              padding: EdgeInsets.all(5.0),
+                              padding: EdgeInsets.all(10.0),
                               // height: 98.h,
                               // width: 400.w,
-                              child: Padding(
-                                padding: EdgeInsets.all(2.0),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        //tanggal--------------------------
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(
+                                        height: 2.h,
+                                      ),
+                                      //tanggal
+                                      Padding(
+                                        // padding: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                                        padding: EdgeInsets.all(2.0),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
                                           children: [
-                                            SizedBox(
-                                              height: 2.h,
+                                            Icon(
+                                              CupertinoIcons.calendar,
+                                              color: primaryColor3,
                                             ),
-                                            //tanggal
-                                            Padding(
-                                              // padding: const EdgeInsets.fromLTRB(4, 0, 0, 0),
-                                              padding: EdgeInsets.all(2.0),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: [
-                                                  Icon(
-                                                    CupertinoIcons.calendar,
-                                                    color: primaryColor3,
-                                                  ),
-                                                  SizedBox(
-                                                    width: 5.w,
-                                                  ),
-                                                  Text(
-                                                    '28 April 2023',
-                                                    style: mediumText10,
-                                                  ),
-                                                  Text(
-                                                    ' - ',
-                                                    style: mediumText10,
-                                                  ),
-                                                  Text(
-                                                    '29 April 2023',
-                                                    style: mediumText10,
-                                                  ),
-                                                ],
-                                              ),
+                                            SizedBox(
+                                              width: 5.w,
+                                            ),
+                                            Text(
+                                              '28 April 2023',
+                                              style: mediumText10,
+                                            ),
+                                            Text(
+                                              ' - ',
+                                              style: mediumText10,
+                                            ),
+                                            Text(
+                                              '29 April 2023',
+                                              style: mediumText10,
                                             ),
                                           ],
                                         ),
+                                      ),
 
-                                        //skor poin--------------------
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Row(
-                                            children: [
-                                              Icon(
-                                                CupertinoIcons.wifi,
-                                                color: primaryColor2,
-                                              ),
-                                              SizedBox(
-                                                width: 2.w,
-                                              ),
-                                              Text(
-                                                '8',
-                                                style: mediumText12,
-                                              ),
-                                            ],
+                                      SizedBox(
+                                        height: 5.h,
+                                      ),
+                                      Container(
+                                        width: 250.w,
+                                        child: Text(
+                                            'Pelatihan Dasar Kepemimpinan Dasar Osis',
+                                            style: mediumText12),
+                                      ),
+
+                                      SizedBox(
+                                        height: 5.h,
+                                      ),
+                                      ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: primaryColor2,
+                                          shape: ContinuousRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(64.0),
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 5.h,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(10),
-                                      child: Text(
-                                          'Pelatihan Dasar Pengisian SPT Tahunan Melalui DJPOnline',
-                                          style: semiBoldText12,
-                                          textAlign: TextAlign.center),
-                                    ),
-                                    SizedBox(
-                                      height: 5.h,
-                                    ),
-                                    ElevatedButton(
-                                      style: ElevatedButton.styleFrom(
-                                        backgroundColor: primaryColor2,
-                                        shape: ContinuousRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(64.0),
-                                        ),
+                                        onPressed: () {},
+                                        child: Text("Menuju Pelatihan"),
                                       ),
-                                      onPressed: () {},
-                                      child: Text("Menuju Pelatihan"),
-                                    ),
-                                  ],
-                                ),
+                                    ],
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            CupertinoIcons.star_fill,
+                                            color: primaryColor2,
+                                          ),
+                                          SizedBox(
+                                            width: 2.w,
+                                          ),
+                                          Text(
+                                            '100',
+                                            style: mediumText10.copyWith(
+                                                color: primaryColor3),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: 5.h,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            CupertinoIcons.chart_bar_alt_fill,
+                                            color: primaryColor3,
+                                          ),
+                                          SizedBox(
+                                            width: 2.w,
+                                          ),
+                                          Text(
+                                            '220',
+                                            style: mediumText10.copyWith(
+                                                color: primaryColor3),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: 15.h,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Center(
+                                            child: Text(
+                                              'Selesai',
+                                              style: semiBoldText12.copyWith(
+                                                  color: appGreen),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  )
+                                ],
                               ),
                             ),
                           ),

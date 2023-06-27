@@ -69,7 +69,7 @@ class PengumumanViewView extends GetView<PengumumanViewController> {
                             },
                             child: Container(
                               //padding: EdgeInsets.all(12.0),
-                              height: 170.h,
+                              height: 150.h,
                               width: 310.w,
                               child: Column(
                                 children: [
@@ -82,7 +82,8 @@ class PengumumanViewView extends GetView<PengumumanViewController> {
                                     child: Center(
                                       child: Text(
                                         'Rabu, 18 Januari 2023 09:30',
-                                        style: semiBoldText12,
+                                        style: semiBoldText12.copyWith(
+                                            color: primaryColor3),
                                       ),
                                     ),
                                   ),
@@ -101,22 +102,6 @@ class PengumumanViewView extends GetView<PengumumanViewController> {
                                           style: mediumText12,
                                           textAlign: TextAlign.center),
                                     ),
-                                  ),
-                                  ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: primaryColor2,
-                                      shape: ContinuousRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(64.0),
-                                      ),
-                                    ),
-                                    onPressed: () {
-                                      Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  DetailGaleriView()));
-                                    },
-                                    child: Text("detail berita"),
                                   ),
                                 ],
                               ),
