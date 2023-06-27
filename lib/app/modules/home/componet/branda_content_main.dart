@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:renjani/app/modules/home/componet/item_card_small.dart';
+import 'package:renjani/app/routes/app_pages.dart';
 
 import '../../../../themes.dart';
 import '../controllers/beranda_controller.dart';
@@ -110,8 +111,13 @@ class BerandaContentMain extends GetView<BerandaController> {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text("See all ",
-                  style: mediumText10.copyWith(color: primaryColor2)),
+              InkWell(
+                onTap: () {
+                  Get.toNamed(Routes.EVENT);
+                },
+                child: Text("See all ",
+                    style: mediumText10.copyWith(color: primaryColor2)),
+              ),
               const Icon(
                 Icons.navigate_next,
                 size: 15.0,
