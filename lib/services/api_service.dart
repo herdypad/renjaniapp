@@ -9,6 +9,7 @@ import '../app/modules/api_log/models/api_log_model.dart';
 import '../constants/constant.dart';
 import '../utils/app_storage.dart';
 import '../utils/app_utils.dart';
+import 'app_cycle_service.dart';
 
 enum Method { POST, GET, PUT, DELETE, PATCH }
 
@@ -30,7 +31,8 @@ class ApiService {
     return this;
   }
 
-  void initInterceptors() {
+  void initInterceptors() async {
+    await AppCycleService().cekInternet();
     _dio?.interceptors.add(
       InterceptorsWrapper(
         onRequest: (requestOptions, handler) {

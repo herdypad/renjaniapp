@@ -24,20 +24,18 @@ class LoginController extends GetxController {
   final ScrollController _scrollController = ScrollController();
   RxBool passToggle = true.obs;
 
-  final cUsername = TextEditingController(text: "relawanjatim3@yopmail.com");
+  final cUsername = TextEditingController(text: "herdy");
   RxString username = ''.obs;
   bool isValidusername = false;
 
-  final cPassword = TextEditingController(text: "Qwerty321");
+  final cPassword = TextEditingController();
   RxString password = ''.obs;
   bool isValidPassword = false;
 
   RxBool isValidForm = false.obs;
   RxBool isLoading = false.obs;
 
-  //login finger
   final LocalAuthentication auth = LocalAuthentication();
-  Future<bool> get canAuthenticate => auth.isDeviceSupported();
 
   @override
   void onInit() async {
@@ -95,8 +93,6 @@ class LoginController extends GetxController {
   }
 
   Future<void> loginFinger() async {
-    return Get.offNamed(Routes.HOME);
-
     if (!isValidForm.isFalse) {
       showToast(message: "Lengkapai Data Login", color: btnRed);
       return;
@@ -125,13 +121,6 @@ class LoginController extends GetxController {
       );
       logSys(e.toString());
     }
-  }
-
-  Future<bool> localAuth(BuildContext context) async {
-    final auth = LocalAuthentication();
-    final didAuthenticate =
-        await auth.authenticate(localizedReason: 'Please authenticate');
-    return didAuthenticate;
   }
 
   Future<void> saveToken(String token) async {

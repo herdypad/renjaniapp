@@ -20,6 +20,15 @@
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
+        },
+        {
+            "name": "renjani",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--web-hostname",
+                "127.0.0.1"
+            ]
         }
     ]
 }

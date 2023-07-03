@@ -149,6 +149,11 @@ class LoginView extends GetView<LoginController> {
                         InkWell(
                           onTap: () {
                             controller.loginFinger();
+                            // controller.localAuth(context).then((value) {
+                            //   if (value) {
+                            //     controller.loginFinger();
+                            //   }
+                            // });
                           },
                           child: Container(
                               height: 50.h,
