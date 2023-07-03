@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:local_auth/local_auth.dart';
 import 'package:renjani/app/api/auth_api.dart';
+import 'package:renjani/app/controllers/user_info_controller.dart';
 import 'package:renjani/themes.dart';
 import 'package:renjani/utils/app_utils.dart';
 import 'package:renjani/widgets/others/show_dialog.dart';
@@ -20,19 +24,23 @@ class LoginController extends GetxController {
   final ScrollController _scrollController = ScrollController();
   RxBool passToggle = true.obs;
 
-  final cUsername = TextEditingController();
+  final cUsername = TextEditingController(text: "relawanjatim3@yopmail.com");
   RxString username = ''.obs;
   bool isValidusername = false;
 
-  final cPassword = TextEditingController();
+  final cPassword = TextEditingController(text: "Qwerty321");
   RxString password = ''.obs;
   bool isValidPassword = false;
 
   RxBool isValidForm = false.obs;
   RxBool isLoading = false.obs;
 
+  //login finger
+  final LocalAuthentication auth = LocalAuthentication();
+  Future<bool> get canAuthenticate => auth.isDeviceSupported();
+
   @override
-  void onInit() {
+  void onInit() async {
     super.onInit();
     getDataLogin();
   }
@@ -65,6 +73,7 @@ class LoginController extends GetxController {
       saveToken(respon['accessToken']);
 
       await Future.delayed(const Duration(seconds: 1));
+      await updateUserLogin();
       showToast(message: "Berhasil Login");
       isLoading(false);
       Get.offNamed(Routes.HOME);
@@ -86,6 +95,8 @@ class LoginController extends GetxController {
   }
 
   Future<void> loginFinger() async {
+    return Get.offNamed(Routes.HOME);
+
     if (!isValidForm.isFalse) {
       showToast(message: "Lengkapai Data Login", color: btnRed);
       return;
@@ -97,9 +108,12 @@ class LoginController extends GetxController {
       final respon = await AuthApi.login(
           username: 'relawanjatim3@yopmail.com', password: 'Qwerty321');
 
+      logSys(respon.toString());
+
       saveToken(respon['accessToken']);
 
       await Future.delayed(const Duration(seconds: 1));
+      await updateUserLogin();
       showToast(message: "Berhasil Login");
       isLoading(false);
       Get.offNamed(Routes.HOME);
@@ -113,9 +127,20 @@ class LoginController extends GetxController {
     }
   }
 
+  Future<bool> localAuth(BuildContext context) async {
+    final auth = LocalAuthentication();
+    final didAuthenticate =
+        await auth.authenticate(localizedReason: 'Please authenticate');
+    return didAuthenticate;
+  }
+
   Future<void> saveToken(String token) async {
     await AppCycleService().setTokenWithTimer(token);
     await AppStorage.write(key: CACHE_ACCESS_TOKEN, value: token);
+  }
+
+  Future<void> updateUserLogin() async {
+    await UserInfoController().getDataUser();
   }
 
   Future<void> getDataLogin() async {

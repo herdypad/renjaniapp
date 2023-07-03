@@ -20,4 +20,21 @@ class AuthApi {
       rethrow;
     }
   }
+
+  static Future<Map<String, dynamic>> whoIam() async {
+    try {
+      final url = 'api/v1/auth/whoami';
+
+      final response = await ApiService().request(
+        url: url,
+        method: Method.POST,
+        parameters: {},
+        isToken: true,
+      );
+
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

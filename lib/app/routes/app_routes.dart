@@ -3,6 +3,7 @@ part of 'app_pages.dart';
 
 abstract class Routes {
   Routes._();
+  static const NOCONNECTION = _Paths.NO_CONNECTION;
   static const BLOCKED = _Paths.BLOCKED;
   static const UNDER_DEVELOPMENT = _Paths.UNDER_DEVELOPMENT;
   static const SPLASH_SCREEN = _Paths.SPLASH_SCREEN;
@@ -20,6 +21,7 @@ abstract class Routes {
 
 abstract class _Paths {
   _Paths._();
+  static const NO_CONNECTION = '/noconnection';
   static const BLOCKED = '/blocked';
   static const UNDER_DEVELOPMENT = '/under-development';
   static const SPLASH_SCREEN = '/splash-screen';
