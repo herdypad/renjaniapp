@@ -24,7 +24,7 @@ class UserProfileView extends GetView<UserProfileController> {
             children: [
               Container(
                 width: double.infinity,
-                height: 250.h,
+                height: 290.h,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('assets/images/bg_profile.png'),
@@ -58,7 +58,7 @@ class UserProfileView extends GetView<UserProfileController> {
                       children: [
                         Column(
                           children: [
-                            SizedBox(height: 50.h),
+                            SizedBox(height: 80.h),
                             //box white
                             Container(
                               width: Get.width,
@@ -286,11 +286,12 @@ class UserProfileView extends GetView<UserProfileController> {
                             ),
                           ],
                         ),
+                        //lingkaran photo
                         Center(
                           child: Container(
                             padding: EdgeInsets.all(10.0),
-                            width: 120.w,
-                            height: 120.h,
+                            width: 220.w,
+                            height: 150.h,
                             decoration: BoxDecoration(
                               border: Border.all(color: Colors.white, width: 5),
                               shape: BoxShape.circle,

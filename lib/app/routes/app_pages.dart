@@ -19,6 +19,8 @@ import '../modules/pelatihan/bindings/pelatihan_binding.dart';
 import '../modules/pelatihan/views/pelatihan_view.dart';
 import '../modules/pengumuman/bindings/pengumuman_binding.dart';
 import '../modules/pengumuman/views/pengumuman_view.dart';
+import '../modules/sertifikat/bindings/sertifikat_binding.dart';
+import '../modules/sertifikat/views/sertifikat_view.dart';
 import '../modules/splash_screen_view.dart';
 import '../modules/under_development.dart';
 import '../modules/user_profile/bindings/user_profile_binding.dart';
@@ -93,6 +95,11 @@ class AppPages {
       name: _Paths.PELAKSANAAN,
       page: () => const PelaksanaanView(),
       binding: PelaksanaanBinding(),
+    ),
+    GetPage(
+      name: _Paths.SERTIFIKAT,
+      page: () => const SertifikatView(),
+      binding: SertifikatBinding(),
     ),
   ];
 }

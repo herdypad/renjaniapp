@@ -22,7 +22,7 @@ class NavBar extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              'Branda',
+              'Beranda',
               style: mediumText12.copyWith(color: kWhite),
             ),
             onTap: () => {Get.offNamed(Routes.HOME)},
@@ -35,14 +35,14 @@ class NavBar extends StatelessWidget {
               'Pengumuman',
               style: mediumText12.copyWith(color: kWhite),
             ),
-            onTap: () => {Get.toNamed(Routes.PENGUMUMAN_VIEW)},
+            onTap: () => {Get.offNamed(Routes.PENGUMUMAN_VIEW)},
           ),
           ListTile(
             title: Text(
               'Pelatihan',
               style: mediumText12.copyWith(color: kWhite),
             ),
-            onTap: () => {Get.toNamed(Routes.PELATIHAN)},
+            onTap: () => {Get.offNamed(Routes.PELATIHAN)},
           ),
           ListTile(
             title: Text(
@@ -58,24 +58,38 @@ class NavBar extends StatelessWidget {
               'Survey dan Sertifikat',
               style: mediumText12.copyWith(color: kWhite),
             ),
-            onTap: () => null,
+            onTap: () => {Get.offNamed(Routes.SERTIFIKAT)},
           ),
           ListTile(
             title: Text(
-              'User Setting',
+              'Survey Wajib Pajak',
               style: mediumText12.copyWith(color: kWhite),
             ),
-            onTap: () => {Get.offNamed(Routes.EVENT)},
+            onTap: () => {},
+          ),
+          ListTile(
+            title: Text(
+              'Konten Tersimpan',
+              style: mediumText12.copyWith(color: kWhite),
+            ),
+            onTap: () => {},
+          ),
+          ListTile(
+            title: Text(
+              'Bantuan',
+              style: mediumText12.copyWith(color: kWhite),
+            ),
+            onTap: () => {Get.toNamed(Routes.FAQ)},
           ),
           Divider(
             color: primaryColor2,
           ),
           ListTile(
             title: Text(
-              'FAQ',
+              'Tentang Renjani',
               style: mediumText12.copyWith(color: kWhite),
             ),
-            onTap: () => {Get.toNamed(Routes.FAQ)},
+            onTap: () => {},
           ),
           ListTile(
             leading: Icon(
