@@ -65,6 +65,7 @@ class NavBar extends StatelessWidget {
               'Survey Wajib Pajak',
               style: mediumText12.copyWith(color: kWhite),
             ),
+
             onTap: () => {},
           ),
           ListTile(
@@ -80,6 +81,7 @@ class NavBar extends StatelessWidget {
               style: mediumText12.copyWith(color: kWhite),
             ),
             onTap: () => {Get.toNamed(Routes.FAQ)},
+
           ),
           Divider(
             color: primaryColor2,

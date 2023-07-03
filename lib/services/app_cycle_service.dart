@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
+import 'package:renjani/app/controllers/user_info_controller.dart';
 
 import '../app/routes/app_pages.dart';
 import '../constants/constant.dart';
@@ -66,7 +68,10 @@ class AppCycleService {
       // * CHECK TOKEN
       final token = await AppStorage.read(key: CACHE_ACCESS_TOKEN);
       if (token.isEmpty) {
-        await Get.offNamed(Routes.HOME);
+
+        await UserInfoController().getDataUser();
+        await Get.offNamed(Routes.LOGIN);
+
         return;
       }
 
@@ -88,5 +93,15 @@ class AppCycleService {
     await Future.delayed(const Duration(milliseconds: 500));
 
     await Get.offAllNamed(Routes.LOGIN);
+  }
+
+  Future<void> cekInternet() async {
+    bool result = await InternetConnectionChecker().hasConnection;
+    if (result == true) {
+      return;
+    } else {
+      await Get.offAllNamed(Routes.NOCONNECTION);
+      return;
+    }
   }
 }

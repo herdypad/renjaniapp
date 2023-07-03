@@ -1,17 +1,39 @@
 # renjani
 
+flutter run -d chrome --web-port=8080 --web-hostname=127.0.0.1
+
+
+# katalog_mobil_b
+
 A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+##ganti Icon
+flutter pub run flutter_launcher_icons
 
-A few resources to get you started if this is your first Flutter project:
+#ganti Packed
+flutter pub run change_app_package_name:main com.cekcatat.tagihanwifi
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# renjaniapp" 
+#ganti nama launcer
+untuk icon tabrakan
+flutter pub run flutter_launcher_name:main
+
+
+#build
+flutter build apk --split-per-abi
+
+
+ #cara ubah Versi aplikasi
+ ada di pubspec.yaml
+
+
+
+ #build to abb
+ubah file di key.properties
+//android//key.properties
+dan ubah versi di pubspec.yaml
+ flutter build appbundle
+
+ test

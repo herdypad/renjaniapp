@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:renjani/app/modules/no_connection.dart';
 
 import '../modules/api_log/bindings/api_log_binding.dart';
 import '../modules/api_log/views/api_log_view.dart';
@@ -34,6 +35,10 @@ class AppPages {
   static const INITIAL = Routes.SPLASH_SCREEN;
 
   static final routes = [
+    GetPage(
+      name: _Paths.NO_CONNECTION,
+      page: () => const NoConnection(),
+    ),
     GetPage(
       name: _Paths.BLOCKED,
       page: () => const BlockedView(),

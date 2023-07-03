@@ -1,12 +1,25 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:renjani/app/controllers/user_info_controller.dart';
+import 'package:renjani/app/models/whoiam_m.dart';
 
 class UserProfileController extends GetxController {
-  //TODO: Implement UserProfileController
+  final tag = "UserProfileController";
+  final cUserInfo = Get.find<UserInfoController>();
+  Rx<WhoiamM> user = WhoiamM().obs;
 
-  final count = 0.obs;
+  final cNik = TextEditingController(text: "");
+  final cHp = TextEditingController(text: "");
+  final cNim = TextEditingController(text: "");
+  final cIg = TextEditingController(text: "");
+  final cTiktok = TextEditingController(text: "");
+  final cAlamat = TextEditingController(text: "");
+
   @override
-  void onInit() {
+  void onInit() async {
     super.onInit();
+    user(cUserInfo.user.value);
+    setData();
   }
 
   @override
@@ -19,5 +32,12 @@ class UserProfileController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  void setData() async {
+    cNik.text = user.value.relawan!.nik!;
+    cHp.text = user.value.relawan!.notelp!;
+    cNim.text = user.value.relawan!.notelp!;
+    cIg.text = user.value.relawan!.instagram!;
+    cTiktok.text = user.value.relawan!.tiktok!;
+    cAlamat.text = user.value.relawan!.alamat!;
+  }
 }
