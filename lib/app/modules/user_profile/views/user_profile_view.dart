@@ -12,6 +12,7 @@ class UserProfileView extends GetView<UserProfileController> {
   const UserProfileView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+
     return Obx(() {
       return Scaffold(
         appBar: AppBar(
@@ -33,6 +34,7 @@ class UserProfileView extends GetView<UserProfileController> {
                         fit: BoxFit.cover),
                     color: primaryColor1,
                   ),
+
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,29 +51,60 @@ class UserProfileView extends GetView<UserProfileController> {
                         ),
                       ),
                     ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Column(
-                    children: [
-                      SizedBox(height: 20.h),
-                      Stack(
-                        children: [
-                          Column(
-                            children: [
-                              SizedBox(height: 50.h),
-                              Container(
-                                width: Get.width,
-                                decoration: BoxDecoration(
-                                    color: kWhite,
-                                    borderRadius: BorderRadius.circular(27)),
-                                child: Column(children: [
-                                  SizedBox(height: 80.h),
-                                  Text(
-                                    controller.user.value.relawan!.nama
-                                        .toString(),
-                                    style: semiBoldText16,
+
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Column(
+                  children: [
+                    SizedBox(height: 20.h),
+                    Stack(
+                      children: [
+                        Column(
+                          children: [
+                            SizedBox(height: 80.h),
+                            //box white
+                            Container(
+                              width: Get.width,
+                              decoration: BoxDecoration(
+                                  color: kWhite,
+                                  borderRadius: BorderRadius.circular(27)),
+                              child: Column(children: [
+                                SizedBox(height: 80.h),
+                                Text(
+                                  "Nurul sayfudin",
+                                  style: semiBoldText16,
+                                ),
+                                Text("KPP Pratama Jakarta Setiabudi Enam",
+                                    style: semiBoldText12.copyWith(
+                                        color: primaryColor3)),
+                                Text("nurul_say@gaamail.com",
+                                    style: mediumText10.copyWith(
+                                        color: primaryColor4)),
+                                SizedBox(height: 12.h),
+                                Container(
+                                  padding: EdgeInsets.all(8.0),
+                                  width: 150.w,
+                                  decoration: BoxDecoration(
+                                      color: primaryColor4,
+                                      borderRadius: BorderRadius.circular(27)),
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10),
+                                    child: Column(children: [
+                                      Text(
+                                        "Point Relawan Anda :",
+                                        style: mediumText10.copyWith(
+                                            color: primaryColor3),
+                                      ),
+                                      Text(
+                                        "1000",
+                                        style: semiBoldText12.copyWith(
+                                            color: primaryColor2),
+                                      ),
+                                    ]),
                                   ),
                                   Text(
                                       controller
@@ -234,6 +267,27 @@ class UserProfileView extends GetView<UserProfileController> {
                                   image: NetworkImage(
                                       'https://images4.alphacoders.com/233/233958.jpg'),
                                 ),
+
+                                SizedBox(height: 12.h),
+                              ]),
+                            ),
+                          ],
+                        ),
+                        //lingkaran photo
+                        Center(
+                          child: Container(
+                            padding: EdgeInsets.all(10.0),
+                            width: 220.w,
+                            height: 150.h,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.white, width: 5),
+                              shape: BoxShape.circle,
+                              color: Colors.white,
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: NetworkImage(
+                                    'https://images4.alphacoders.com/233/233958.jpg'),
+
                               ),
                             ),
                           ),
