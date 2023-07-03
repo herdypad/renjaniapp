@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:renjani/app/modules/home/tab/tab_gallery.dart';
 import 'package:renjani/app/modules/home/tab/tab_rank.dart';
+import 'package:renjani/app/routes/app_pages.dart';
 
 import '../../../../themes.dart';
 import '../../../../widgets/custom_bottom_navbar.dart';
@@ -45,7 +46,7 @@ class HomeView extends GetView<HomeController> {
             Padding(
                 padding: EdgeInsets.only(right: 20.0),
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () => {Get.toNamed(Routes.USER_PROFILE)},
                   child: Icon(
                     Icons.account_circle,
                     size: 30.0,

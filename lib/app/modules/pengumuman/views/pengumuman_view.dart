@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:renjani/app/modules/home/componet/navbar.dart';
 import '../../../../themes.dart';
 
 import 'package:get/get.dart';
@@ -15,12 +16,46 @@ class PengumumanViewView extends GetView<PengumumanViewController> {
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> _scaffoldKey =
+        new GlobalKey<ScaffoldState>();
     final ScrollController _scrollController = ScrollController();
+
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: NavBar(),
       appBar: AppBar(
         backgroundColor: primaryColor1,
-        centerTitle: true,
-        title: Text('Pengumuman'),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              "assets/icons/icon_app.png",
+              height: 70.0,
+              fit: BoxFit.fill,
+            ),
+          ],
+        ),
+        leading: GestureDetector(
+          onTap: () {
+            _scaffoldKey.currentState?.openDrawer();
+          },
+          child: Icon(
+            Icons.menu,
+            size: 30,
+          ),
+        ),
+        actions: <Widget>[
+          Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () => {Get.toNamed(Routes.USER_PROFILE)},
+                child: Icon(
+                  Icons.account_circle,
+                  size: 30.0,
+                  color: primaryColor2,
+                ),
+              )),
+        ],
       ),
       body: SafeArea(
         child: Scrollbar(
@@ -106,6 +141,25 @@ class PengumumanViewView extends GetView<PengumumanViewController> {
                                 ],
                               ),
                             ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink(
+                            height: 54.h,
+                            decoration: BoxDecoration(
+                              color: btnPrimary,
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            child: Center(
+                                child: Text("Load More",
+                                    style: mediumText14.copyWith(
+                                        fontSize: 14.sp,
+                                        color:
+                                            primaryColor1.withOpacity(0.5)))),
                           ),
                         ),
                       ),
