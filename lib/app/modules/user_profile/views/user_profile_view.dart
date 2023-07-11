@@ -1,7 +1,6 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:get/get.dart';
 
@@ -28,10 +27,10 @@ class UserProfileView extends GetView<UserProfileController> {
                   width: double.infinity,
                   height: 250.h,
                   decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/bg_profile.png'),
-                        fit: BoxFit.cover),
-                    color: primaryColor1,
+                    // image: DecorationImage(
+                    //     image: AssetImage('assets/images/bg_profile.png'),
+                    //     fit: BoxFit.cover),
+                    color: primaryColor2,
                   ),
                 ),
                 Row(
@@ -41,7 +40,7 @@ class UserProfileView extends GetView<UserProfileController> {
                       onTap: () {
                         Get.back();
                       },
-                      child: Padding(
+                      child: const Padding(
                         padding: EdgeInsets.all(18.0),
                         child: Icon(
                           Icons.arrow_back,
@@ -84,26 +83,28 @@ class UserProfileView extends GetView<UserProfileController> {
                                           color: primaryColor4)),
                                   SizedBox(height: 12.h),
                                   Container(
-                                    padding: EdgeInsets.all(8.0),
+                                    padding: const EdgeInsets.all(8.0),
                                     width: 150.w,
                                     decoration: BoxDecoration(
                                         color: primaryColor5,
                                         borderRadius:
                                             BorderRadius.circular(15)),
                                     child: Padding(
-                                      padding:
-                                          EdgeInsets.symmetric(horizontal: 10),
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 10),
                                       child: Column(children: [
                                         Text(
                                           "Point Relawan Anda :",
                                           style: mediumText10.copyWith(
                                               color: primaryColor3),
                                         ),
-                                        Text(
-                                          "1000",
-                                          style: semiBoldText12.copyWith(
-                                              color: primaryColor2),
-                                        ),
+                                        Obx(
+                                          () => Text(
+                                            controller.poinRelawan.value,
+                                            style: semiBoldText12.copyWith(
+                                                color: primaryColor2),
+                                          ),
+                                        )
                                       ]),
                                     ),
                                   ),
@@ -220,47 +221,50 @@ class UserProfileView extends GetView<UserProfileController> {
                             ],
                           ),
                           Center(
-                            child: Container(
-                              padding: EdgeInsets.all(10.0),
-                              width: 120.w,
-                              height: 120.h,
-                              decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: Colors.white, width: 5),
-                                shape: BoxShape.circle,
-                                color: Colors.white,
-                                image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: NetworkImage(
-                                      'https://images4.alphacoders.com/233/233958.jpg'),
+                            child: InkWell(
+                              onTap: () {
+                                controller.pickImage();
+                              },
+                              child: Container(
+                                padding: EdgeInsets.all(10.0),
+                                width: 120.w,
+                                height: 120.h,
+                                decoration: BoxDecoration(
+                                  border:
+                                      Border.all(color: Colors.white, width: 5),
+                                  shape: BoxShape.circle,
+                                  color: Colors.white,
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: NetworkImage(controller
+                                            .urlProfile.value.isEmpty
+                                        ? "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCX5TOKkOk3MBt8V-f8PbmGrdLHCi4BoUOs_yuZ1pekOp8U_yWcf40t66JZ4_e_JYpRTOVCl0m8ozEpLrs9Ip2Cm7kQz4fUnUFh8Jcv8fMFfPbfbyWEEKne0S9e_U6fWEmcz0oihuJM6sP1cGFqdJZbLjaEQnGdgJvcxctqhMbNw632OKuAMBMwL86/w640-h596/pp%20kosong%20wa%20default.jpg"
+                                        : controller.urlProfile.value),
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                         ],
                       ),
-                      Column(
-                        children: [
-                          SizedBox(height: 10.h),
-                          Container(
-                            height: 50.h,
-                            width: 200.w,
+                      Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink(
+                            height: 54.h,
                             decoration: BoxDecoration(
-                                color: primaryColor2,
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 22),
-                              child: Center(
-                                child: Text(
-                                  "Simpan",
-                                  style: mediumText12.copyWith(
-                                      color: primaryColor3),
-                                ),
-                              ),
+                              color: btnPrimary,
+                              borderRadius: BorderRadius.circular(6),
                             ),
-                          )
-                        ],
+                            child: Center(
+                                child: Text("Simpan",
+                                    style: mediumText14.copyWith(
+                                        fontSize: 14.sp,
+                                        color:
+                                            primaryColor1.withOpacity(0.5)))),
+                          ),
+                        ),
                       ),
                       SizedBox(height: 10.h),
                     ],
