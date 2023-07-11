@@ -1,9 +1,11 @@
-// ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
+import 'package:get/get.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
+import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
+
 import 'package:renjani/app/modules/home/controllers/rank_controller.dart';
+import 'package:renjani/utils/app_utils.dart';
 
 import '../../../../themes.dart';
 
@@ -12,81 +14,76 @@ class TabRank extends GetView<RankController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            children: [
-              Center(
-                child: Column(
-                  children: [
-                    Text(
-                      "Peringkat Relawan",
-                      style: semiBoldText12.copyWith(
-                          fontSize: 24.sp, color: primaryColor1),
-                    ),
-                    Text(
-                      "100 Peringkat Teratas Relawan Pajak",
-                      style: mediumText14.copyWith(
-                          fontSize: 12.sp, color: primaryColor1),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 42.h),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: RankItem(),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: RankItem(),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: RankItem(),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: RankItem(),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: InkWell(
-                  onTap: () {},
-                  child: Ink(
-                    height: 54.h,
-                    decoration: BoxDecoration(
-                      color: btnPrimary,
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                    child: Center(
-                        child: Text("Load More",
-                            style: mediumText14.copyWith(
-                                fontSize: 14.sp,
-                                color: primaryColor1.withOpacity(0.5)))),
+    return Obx(() {
+      return Scaffold(
+        body: Column(
+          children: [
+            Center(
+              child: Column(
+                children: [
+                  Text(
+                    "Peringkat Relawan",
+                    style: semiBoldText12.copyWith(
+                        fontSize: 24.sp, color: primaryColor1),
                   ),
+                  Text(
+                    "100 Peringkat Teratas Relawan Pajak",
+                    style: mediumText14.copyWith(
+                        fontSize: 12.sp, color: primaryColor1),
+                  ),
+                ],
+              ),
+            ),
+            Flexible(
+              child: LazyLoadScrollView(
+                onEndOfPage: () {
+                  logSys("Load More");
+                  controller.loadMore();
+                },
+                child: ListView.builder(
+                  itemCount: controller.lenkList.value,
+                  physics: const ScrollPhysics(),
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: EdgeInsets.all(10),
+                      child: RankItem(
+                        indexRank: index + 1,
+                      ),
+                    );
+                  },
                 ),
               ),
-            ],
-          ),
+            ),
+            controller.isLoad.isTrue
+                ? const Center(
+                    child: CircularProgressIndicator(
+                    backgroundColor: Colors.transparent,
+                  ))
+                : Container(),
+            controller.isLoadMore.isFalse
+                ? const Center(child: Text("Tidak Ada Lagi"))
+                : Container()
+          ],
         ),
-      ),
-    );
+      );
+    });
   }
 }
 
 class RankItem extends StatelessWidget {
   const RankItem({
     super.key,
+    required this.indexRank,
   });
+
+  final int indexRank;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: primaryColor1,
+        // color: primaryColor1,
+        border: Border.all(width: 2.w, color: primaryColor1),
         borderRadius: BorderRadius.circular(24),
       ),
       child: Padding(
@@ -106,14 +103,15 @@ class RankItem extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(width: 5),
             Expanded(
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       "Abang Mesi",
-                      style:
-                          mediumText14.copyWith(fontSize: 12.sp, color: kWhite),
+                      style: mediumText14.copyWith(
+                          fontSize: 12.sp, color: primaryColor1),
                     ),
                     Container(
                       height: 5.h,
@@ -121,8 +119,8 @@ class RankItem extends StatelessWidget {
                     ),
                     Text(
                       "A University",
-                      style:
-                          mediumText14.copyWith(fontSize: 12.sp, color: kWhite),
+                      style: mediumText14.copyWith(
+                          fontSize: 12.sp, color: primaryColor1),
                     ),
                   ]),
             ),
@@ -130,7 +128,7 @@ class RankItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Text(
-                "#1",
+                "#$indexRank",
                 style: semiBoldText14.copyWith(
                     fontSize: 20.sp, color: primaryColor2),
               ),
