@@ -25,6 +25,9 @@ class ApiService {
       BaseOptions(
         baseUrl: baseUrl,
         headers: {'Content-Type': 'application/json'},
+        receiveDataWhenStatusError: true,
+        connectTimeout: const Duration(seconds: 60 * 1000), // 60 seconds
+        receiveTimeout: const Duration(seconds: 60 * 1000), // 60 seconds
       ),
     );
     initInterceptors();

@@ -72,11 +72,10 @@ class LoginController extends GetxController {
       logSys(respon['accessToken'].toString());
       saveToken(respon['accessToken']);
 
-      await Future.delayed(const Duration(seconds: 1));
+      await Future.delayed(const Duration(seconds: 2));
       await updateUserLogin();
       showToast(message: "Berhasil Login");
       isLoading(false);
-      Get.offNamed(Routes.HOME);
 
       //menyimpan ke login
       await AppStorage.write(key: CACHE_ACCESS_USERNAME, value: cUsername.text);
@@ -84,6 +83,8 @@ class LoginController extends GetxController {
         key: CACHE_ACCESS_PASSWORD,
         value: cPassword.text,
       );
+
+      Get.offNamed(Routes.HOME);
     } catch (e) {
       isLoading(false);
       showPopUpInfo(
