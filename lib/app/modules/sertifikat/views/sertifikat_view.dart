@@ -52,70 +52,85 @@ class SertifikatView extends GetView<SertifikatController> {
               )),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Stack(
-          children: [
-            Container(
-              width: double.infinity,
-              height: 200.h,
-              decoration: BoxDecoration(
-                color: primaryColor2,
-              ),
-            ),
-            Container(
-              child: Column(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Stack(
                 children: [
-                  SizedBox(height: 20.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                  Container(
+                    width: double.infinity,
+                    height: 200.h,
+                    decoration: BoxDecoration(
+                      color: primaryColor2,
+                    ),
+                  ),
+                  Container(
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Point Relawan Anda Saat Ini :",
-                          style: mediumText12.copyWith(color: primaryColor3),
+                        SizedBox(height: 20.h),
+                        Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Point Relawan Anda Saat Ini :",
+                                style:
+                                    mediumText12.copyWith(color: primaryColor3),
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    FontAwesomeIcons.trophy,
+                                    size: 20.0,
+                                    color: primaryColor1,
+                                  ),
+                                  SizedBox(width: 5.w),
+                                  Text(
+                                    "300.000",
+                                    style: semiBoldText14.copyWith(
+                                        color: primaryColor1),
+                                  ),
+                                  SizedBox(width: 5.w),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                        Row(
-                          children: [
-                            Icon(
-                              FontAwesomeIcons.trophy,
-                              size: 20.0,
-                              color: primaryColor1,
-                            ),
-                            SizedBox(width: 5.w),
-                            Text(
-                              "300.000",
-                              style:
-                                  semiBoldText14.copyWith(color: primaryColor1),
-                            ),
-                            SizedBox(width: 5.w),
-                            // Icon(
-                            //   FontAwesomeIcons.,
-                            //   size: 20.0,
-                            //   color: primaryColor1,
-                            // ),
-                          ],
+                        SizedBox(height: 30.h),
+                        //box white
+                        Container(
+                          width: Get.width,
+                          decoration: BoxDecoration(
+                              color: kWhite,
+                              borderRadius: BorderRadius.circular(27)),
+                          child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [],
+                              )),
                         ),
                       ],
                     ),
                   ),
-
-                  SizedBox(height: 50.h),
-                  //box white
-                  Container(
-                    width: Get.width,
-                    decoration: BoxDecoration(
-                        color: kWhite, borderRadius: BorderRadius.circular(27)),
-                    child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [],
-                        )),
-                  ),
                 ],
               ),
-            ),
-          ],
+              Container(
+                padding: EdgeInsets.all(8),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Riwayat Point :",
+                      style: mediumText12.copyWith(color: primaryColor3),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

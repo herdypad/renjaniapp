@@ -74,7 +74,6 @@ class AppCycleService {
 
       final isValid = await AppUtils.checkTokenValidity(token);
       if (isValid) {
-        // await UserInfoController().getDataUser();
         await Get.offNamed(Routes.HOME);
         return;
       }
