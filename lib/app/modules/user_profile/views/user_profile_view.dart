@@ -5,6 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../../themes.dart';
+import '../../../../widgets/others/bottomsheet_custom.dart';
+import '../component/edit_profile_photo_bottomsheet.dart';
 import '../controllers/user_profile_controller.dart';
 
 class UserProfileView extends GetView<UserProfileController> {
@@ -223,7 +225,12 @@ class UserProfileView extends GetView<UserProfileController> {
                           Center(
                             child: InkWell(
                               onTap: () {
-                                controller.pickImage();
+                                // controller.pickImage();
+                                BottomSheetCustom(
+                                  context: context,
+                                  initialChildSize: 0.25,
+                                  child: const EditProfilePhotoBottomSheet(),
+                                ).showData();
                               },
                               child: Container(
                                 padding: EdgeInsets.all(10.0),

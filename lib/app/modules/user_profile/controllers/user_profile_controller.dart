@@ -1,16 +1,17 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:renjani/app/controllers/user_info_controller.dart';
 import 'package:renjani/app/models/whoiam_m.dart';
+import 'package:renjani/app/modules/user_profile/controllers/edit_profile_controller.dart';
 import 'package:renjani/app/modules/user_profile/repo/userProfileRepo.dart';
 
 class UserProfileController extends GetxController {
   final tag = "UserProfileController";
   final cUserInfo = Get.find<UserInfoController>();
+  final editFrofile = Get.find<EditProfileController>();
+
   Rx<WhoiamM> user = WhoiamM().obs;
 
   final cNik = TextEditingController(text: "");
@@ -24,6 +25,8 @@ class UserProfileController extends GetxController {
   RxString urlProfile =
       'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCX5TOKkOk3MBt8V-f8PbmGrdLHCi4BoUOs_yuZ1pekOp8U_yWcf40t66JZ4_e_JYpRTOVCl0m8ozEpLrs9Ip2Cm7kQz4fUnUFh8Jcv8fMFfPbfbyWEEKne0S9e_U6fWEmcz0oihuJM6sP1cGFqdJZbLjaEQnGdgJvcxctqhMbNw632OKuAMBMwL86/w640-h596/pp%20kosong%20wa%20default.jpg'
           .obs;
+
+  RxString photoProfileEdited = ''.obs;
 
   File? image;
 
@@ -52,17 +55,6 @@ class UserProfileController extends GetxController {
     cIg.text = user.value.relawan!.instagram!;
     cTiktok.text = user.value.relawan!.tiktok!;
     cAlamat.text = user.value.relawan!.alamat!;
-  }
-
-  Future pickImage() async {
-    try {
-      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
-      if (image == null) return;
-      final imageTemp = File(image.path);
-      this.image = imageTemp;
-    } on PlatformException catch (e) {
-      print('Failed to pick image: $e');
-    }
   }
 
   Future<void> getPoinUser() async {

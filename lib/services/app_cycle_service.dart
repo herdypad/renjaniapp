@@ -93,12 +93,12 @@ class AppCycleService {
   }
 
   Future<void> cekInternet() async {
-    bool result = await InternetConnectionChecker().hasConnection;
-    if (result == true) {
-      return;
-    } else {
-      await Get.offAllNamed(Routes.NOCONNECTION);
-      return;
-    }
+    // bool result = await InternetConnectionChecker().hasConnection;
+    // if (result == true) {
+    //   return;
+    // } else {
+    //   await Get.offAllNamed(Routes.NOCONNECTION);
+    return;
+    // }
   }
 }
