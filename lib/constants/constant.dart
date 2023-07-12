@@ -1,5 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
+const String BASE_URL = 'http://10.244.66.97:7070/';
 const String CACHE_ACCESS_TOKEN = 'access_token';
 const String CACHE_ACCESS_USERNAME = 'access_username';
 const String CACHE_ACCESS_PASSWORD = 'access_password';

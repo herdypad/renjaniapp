@@ -6,7 +6,7 @@ class UserProfileRepo {
 
   Future<String> getPoinUserRelawan() async {
     try {
-      final data = await RelawanAPi.poinRelawan();
+      final data = await RelawanAPi.flashFotoTerbaru();
       logSys(TAG + data['pointRelawan'].toString());
       return data['pointRelawan'].toString();
     } catch (e) {

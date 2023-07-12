@@ -17,7 +17,7 @@ class ApiService {
   final tag = "ApiService";
   Dio? _dio;
 
-  final baseUrl = "http://10.244.66.97:7070/";
+  final baseUrl = BASE_URL;
 
   Future<ApiService> init() async {
     logSys('Api Service Initialized');
