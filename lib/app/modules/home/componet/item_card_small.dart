@@ -7,7 +7,14 @@ import '../../../../themes.dart';
 class item_card_small extends StatelessWidget {
   const item_card_small({
     super.key,
+    this.judul,
+    this.tgl,
+    this.urlIgm,
   });
+
+  final String? judul;
+  final String? tgl;
+  final String? urlIgm;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +25,13 @@ class item_card_small extends StatelessWidget {
           height: 117.h,
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: NetworkImage(
+                  onError: (exception, stackTrace) {
+                    Image.asset(
+                      "assets/images/tes1.jpg",
+                      fit: BoxFit.cover,
+                    );
+                  },
+                  image: NetworkImage(urlIgm ??
                       "https://ortax.org/wp-content/uploads/2022/07/Untitled-2-1024x576.jpg"),
                   fit: BoxFit.cover),
               color: primaryColor1,
@@ -38,12 +51,12 @@ class item_card_small extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "13 November 2020 ",
+                          tgl ?? " ",
                           style: mediumText11.copyWith(
                               fontSize: 9.sp, color: kWhite.withOpacity(0.6)),
                         ),
                         Text(
-                          "Hari Pajak",
+                          judul ?? "",
                           style: mediumText9.copyWith(
                               color: kWhite.withOpacity(0.6)),
                         ),

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:renjani/app/modules/berita/views/detail_berita_view.dart';
 import 'package:renjani/app/modules/no_connection.dart';
 
 import '../modules/api_log/bindings/api_log_binding.dart';
@@ -87,8 +88,18 @@ class AppPages {
       binding: EventBinding(),
     ),
     GetPage(
+      name: _Paths.DETAILEVENT,
+      page: () => const DetailBeritaView(),
+      binding: EventBinding(),
+    ),
+    GetPage(
       name: _Paths.BERITA,
       page: () => const BeritaView(),
+      binding: BeritaBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAILBERITA,
+      page: () => const DetailBeritaView(),
       binding: BeritaBinding(),
     ),
     GetPage(

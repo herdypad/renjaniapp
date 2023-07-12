@@ -1,16 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:renjani/app/modules/home/controllers/home_controller.dart';
+import 'package:renjani/app/modules/home/model/event_terbaru_m.dart';
+import 'package:renjani/utils/app_utils.dart';
 
 import '../../../../themes.dart';
 
 class item_card_large extends StatelessWidget {
   const item_card_large({
     super.key,
+    this.judul,
+    this.tgl,
+    this.urlIgm,
   });
+
+  final String? judul;
+  final String? tgl;
+  final String? urlIgm;
 
   @override
   Widget build(BuildContext context) {
+    final cHome = Get.find<HomeController>();
+
+    AssetImage localImage = const AssetImage('assets/images/tes1.jpg');
     return Row(
       children: [
         Container(
@@ -18,7 +31,13 @@ class item_card_large extends StatelessWidget {
           height: 243.h,
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: NetworkImage(
+                  onError: (exception, stackTrace) {
+                    Image.asset(
+                      "assets/images/tes1.jpg",
+                      fit: BoxFit.cover,
+                    );
+                  },
+                  image: NetworkImage(urlIgm ??
                       "https://ortax.org/wp-content/uploads/2022/07/Untitled-2-1024x576.jpg"),
                   fit: BoxFit.cover),
               color: primaryColor1,
@@ -39,12 +58,12 @@ class item_card_large extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "13 November 2020",
+                          tgl ?? "",
                           style: mediumText9.copyWith(
                               color: kWhite.withOpacity(0.6)),
                         ),
                         Text(
-                          "Hari Pajak",
+                          judul ?? "",
                           style: mediumText12.copyWith(
                               color: kWhite.withOpacity(0.6)),
                         ),
