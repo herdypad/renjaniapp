@@ -1,9 +1,12 @@
 import 'package:get/get.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:renjani/constants/constant.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../../../themes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../widgets/others/shimmer_indicator.dart';
 import '../controllers/beranda_controller.dart';
 import 'home_item_header.dart';
 
@@ -12,18 +15,6 @@ class BerandaSliderHeader extends GetView<BerandaController> {
 
   @override
   Widget build(BuildContext context) {
-    List cards = [
-      home_item_header(
-          urlImage:
-              "https://ddtc-cdn1.sgp1.digitaloceanspaces.com/view/200225035627relawanpajakjakpus.jpg"),
-      home_item_header(
-          urlImage:
-              "https://www.pajak.com/storage/2023/02/relawan-pajak-www.jpg"),
-      home_item_header(
-          urlImage:
-              "https://i0.wp.com/koranbanjar.net/wp-content/uploads/2021/05/INFO-PAJAK.jpg?fit=500%2C363&ssl=1"),
-    ];
-
     Widget indicator(bool status) {
       return Container(
         width: status ? 20.w : 5.w,
@@ -35,20 +26,25 @@ class BerandaSliderHeader extends GetView<BerandaController> {
       );
     }
 
-    Widget cardInfo() {
+    Widget cardInfo(List<String> data) {
       int index = -1;
       return Column(
         children: [
           CarouselSlider(
-            items: cards
-                .map<Widget>((card) => Container(
-                      child: card,
-                    ))
-                .toList(),
+            items: data.map((i) {
+              return Builder(
+                builder: (BuildContext context) {
+                  return home_item_header(
+                      urlImage:
+                          "${BASE_URL}api/v1/landingpages/files/image/${i}");
+                },
+              );
+            }).toList(),
             options: CarouselOptions(
               viewportFraction: 1,
               height: 168.h,
-              enableInfiniteScroll: false,
+              autoPlay: true,
+              enableInfiniteScroll: true,
               initialPage: 0,
               onPageChanged: (index, reason) {
                 controller.currentIndex.value = index;
@@ -63,7 +59,13 @@ class BerandaSliderHeader extends GetView<BerandaController> {
     return Obx(() {
       return Column(
         children: [
-          cardInfo(),
+          controller.isLoadHeader.isFalse
+              ? cardInfo(controller.listFlashFoto)
+              : ShimmerIndicator(
+                  width: Get.width,
+                  height: 164.w,
+                  borderRadius: Insets.med,
+                ),
           SizedBox(height: 17.h),
           Center(
               child:
@@ -71,6 +73,8 @@ class BerandaSliderHeader extends GetView<BerandaController> {
             indicator(controller.currentIndex.value != 0 ? false : true),
             indicator(controller.currentIndex.value != 1 ? false : true),
             indicator(controller.currentIndex.value != 2 ? false : true),
+            indicator(controller.currentIndex.value != 3 ? false : true),
+            indicator(controller.currentIndex.value != 4 ? false : true),
           ])),
         ],
       );

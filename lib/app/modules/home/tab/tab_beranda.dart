@@ -15,7 +15,7 @@ class TabBeranda extends GetView<BerandaController> {
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(10.0),
-          child: Column(
+          child: const Column(
             children: [
               BerandaSliderHeader(),
               BerandaContentMain(),
