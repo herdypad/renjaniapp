@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import 'package:renjani/app/modules/user_profile/repo/userProfileRepo.dart';
+
 import '../../../../utils/app_utils.dart';
 import '../../../../widgets/others/show_dialog.dart';
 import '../../../controllers/user_info_controller.dart';
@@ -80,11 +82,13 @@ class EditProfileController extends GetxController {
 
   Future<void> changePhotoProfile(ImageSource source) async {
     final picker = ImagePicker();
-    final file = await picker.pickImage(source: source);
+    final file = await picker.pickImage(source: source, imageQuality: 70);
     if (file != null) {
       photoProfileEdited(file.path);
-      isPhotoEdited(true);
-      // validateForm();
+      final data = await UserProfileRepo().uploadFile(file);
+      logSys(photoProfileEdited.toString());
+      await cUserInfo.getDataUser();
+      return;
     }
   }
 
@@ -95,30 +99,11 @@ class EditProfileController extends GetxController {
     Get.back();
   }
 
-  Future<String> uploadPhoto() async {
-    return "";
-
-    // final fileName = basename(photoProfileEdited.value);
-
-    // final ref = FirebaseStorage.instance.ref().child(fileName);
-    // final task = ref.putFile(File(photoProfileEdited.value));
-    // final snapshot = await task;
-    // final url = await snapshot.ref.getDownloadURL();
-
-    // return url;
-  }
-
   Future<void> submit() async {
     try {
       AppUtils.dismissKeyboard();
 
       isLoading(true);
-
-      var url = '';
-
-      if (isPhotoEdited.value && photoProfileEdited.value.isNotEmpty) {
-        url = await uploadPhoto();
-      }
 
       await cUserInfo.getDataUser();
 

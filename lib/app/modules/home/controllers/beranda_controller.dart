@@ -1,15 +1,20 @@
 import 'package:get/get.dart';
+import 'package:renjani/app/controllers/user_info_controller.dart';
 import 'package:renjani/app/modules/home/model/berita_terbaru_m.dart';
 import 'package:renjani/app/modules/home/model/event_terbaru_m.dart';
+import 'package:renjani/app/modules/home/model/galery_terbaru_m.dart';
 import 'package:renjani/app/modules/home/repo/beranda_repo.dart';
 import 'package:renjani/utils/app_utils.dart';
 
 class BerandaController extends GetxController {
   final TAG = "BerandaController : ";
 
-  RxList<String> listFlashFoto = <String>[].obs;
+  final cUserInfo = Get.find<UserInfoController>();
+
+  RxList<String> listSliderFoto = <String>[].obs;
   RxList<EventTerbaruM> listEventTerbaru = <EventTerbaruM>[].obs;
   RxList<BeritaTerbaruM> listBeritaTerbaru = <BeritaTerbaruM>[].obs;
+  RxList<GaleryTerbaruM> listGeleryTerbaru = <GaleryTerbaruM>[].obs;
 
   RxInt idSelect1 = 0.obs;
   RxInt statusEventBerita = 0.obs;
@@ -17,7 +22,7 @@ class BerandaController extends GetxController {
   //header variable
   RxInt currentIndex = 0.obs;
 
-  RxBool isLoadHeader = false.obs;
+  RxBool isLoadHeader = true.obs;
   RxBool isLoadEvent = false.obs;
   RxBool isLoadBerita = false.obs;
   RxBool isLoadGalery = false.obs;
@@ -27,6 +32,7 @@ class BerandaController extends GetxController {
     super.onInit();
     logSys(TAG);
     initData();
+    cUserInfo.getDataUser();
   }
 
   @override
@@ -41,9 +47,9 @@ class BerandaController extends GetxController {
 
   Future<void> initData() async {
     isLoadHeader(true);
-    final data = await BerandaRepo().getflashfoto();
-    listFlashFoto(data);
-    isLoadHeader(false);
+    // final data = await BerandaRepo().getflashfoto();
+    // listFlashFoto(data);
+    // isLoadHeader(false);
 
     isLoadEvent(true);
     final dataEvent = await BerandaRepo().geteventterbaru();
@@ -54,5 +60,10 @@ class BerandaController extends GetxController {
     final dataBerita = await BerandaRepo().getBeritabaru();
     listBeritaTerbaru(dataBerita);
     isLoadBerita(false);
+
+    isLoadGalery(true);
+    final data = await BerandaRepo().getGalery();
+    listGeleryTerbaru(data);
+    isLoadGalery(false);
   }
 }

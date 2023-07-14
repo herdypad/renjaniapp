@@ -1,3 +1,5 @@
 -home
 galery belum tau dari main
 image error 
+
+api image slider di landing masih format download belum == stream

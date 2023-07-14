@@ -1,11 +1,10 @@
-import 'package:get/get.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:renjani/constants/constant.dart';
-import 'package:shimmer/shimmer.dart';
-import '../../../../themes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:renjani/constants/constant.dart';
 
+import '../../../../themes.dart';
 import '../../../../widgets/others/shimmer_indicator.dart';
 import '../controllers/beranda_controller.dart';
 import 'home_item_header.dart';
@@ -19,7 +18,7 @@ class BerandaSliderHeader extends GetView<BerandaController> {
       return Container(
         width: status ? 20.w : 5.w,
         height: 10.h,
-        margin: EdgeInsets.symmetric(horizontal: 2),
+        margin: const EdgeInsets.symmetric(horizontal: 2),
         decoration: BoxDecoration(
             color: status ? primaryColor1 : primaryColor1.withOpacity(0.7),
             borderRadius: BorderRadius.circular(4)),
@@ -36,7 +35,7 @@ class BerandaSliderHeader extends GetView<BerandaController> {
                 builder: (BuildContext context) {
                   return home_item_header(
                       urlImage:
-                          "${BASE_URL}api/v1/landingpages/files/image/${i}");
+                          "${BASE_URL}api/v1/landingpages/files/image/$i");
                 },
               );
             }).toList(),
@@ -60,7 +59,7 @@ class BerandaSliderHeader extends GetView<BerandaController> {
       return Column(
         children: [
           controller.isLoadHeader.isFalse
-              ? cardInfo(controller.listFlashFoto)
+              ? cardInfo(controller.listSliderFoto)
               : ShimmerIndicator(
                   width: Get.width,
                   height: 164.w,

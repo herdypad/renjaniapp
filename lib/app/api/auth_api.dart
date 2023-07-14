@@ -6,7 +6,7 @@ class AuthApi {
     required String password,
   }) async {
     try {
-      final url = 'api/v1/auth/login';
+      const url = 'api/v1/auth/login';
 
       final response = await ApiService().request(
         url: url,
@@ -23,7 +23,7 @@ class AuthApi {
 
   static Future<Map<String, dynamic>> whoIam() async {
     try {
-      final url = 'api/v1/auth/whoami';
+      const url = 'api/v1/auth/whoami';
 
       final response = await ApiService().request(
         url: url,
