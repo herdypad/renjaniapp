@@ -1,15 +1,12 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
-import 'package:renjani/app/controllers/user_info_controller.dart';
 
 import '../app/routes/app_pages.dart';
 import '../constants/constant.dart';
 import '../utils/app_storage.dart';
 import '../utils/app_utils.dart';
-import '../widgets/others/show_dialog.dart';
 
 class AppCycleService {
   factory AppCycleService() {
@@ -37,7 +34,7 @@ class AppCycleService {
     if (tokenExpiredTimer != null) {
       tokenExpiredTimer!.cancel();
     }
-    // tokenExpiredTimer = null;
+    tokenExpiredTimer = null;
     // tokenExpiredTimer = Timer(d, () async {
     //   showPopUpInfo(
     //     title: 'Mohon maaf',

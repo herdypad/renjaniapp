@@ -59,3 +59,10 @@ Text(
                               ),
                             ),
                           
+
+
+                            ShimmerIndicator(
+                              width: Get.width,
+                              height: 164.w,
+                              borderRadius: Insets.med,
+                            ),

@@ -11,7 +11,7 @@ import '../utils/app_storage.dart';
 import '../utils/app_utils.dart';
 import 'app_cycle_service.dart';
 
-enum Method { POST, GET, PUT, DELETE, PATCH }
+enum Method { POST, GET, PUT, DELETE, PATCH, FORMDATA }
 
 class ApiService {
   final tag = "ApiService";
@@ -71,14 +71,14 @@ class ApiService {
     return header;
   }
 
-  Future<dynamic> request({
-    required String url,
-    required Method method,
-    Map<String, String>? headers,
-    Map<String, dynamic>? parameters,
-    bool isToken = true,
-    bool isCustomResponse = false,
-  }) async {
+  Future<dynamic> request(
+      {required String url,
+      required Method method,
+      Map<String, String>? headers,
+      Map<String, dynamic>? parameters,
+      bool isToken = true,
+      bool isCustomResponse = false,
+      String? file}) async {
     Response response;
 
     final params = parameters ?? <String, dynamic>{};
@@ -97,6 +97,13 @@ class ApiService {
         response = await _dio!.delete(url);
       } else if (method == Method.PATCH) {
         response = await _dio!.patch(url);
+      } else if (method == Method.FORMDATA) {
+        // Membuat data yang akan di-upload
+        final formData = FormData.fromMap({
+          'logUpload': parameters,
+          'file': await MultipartFile.fromFile('$file', filename: 'upload.jpg'),
+        });
+        response = await _dio!.post(url, data: formData);
       } else {
         response = await _dio!.get(url, queryParameters: params);
       }
