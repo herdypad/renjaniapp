@@ -8,15 +8,22 @@ class UserInfoController extends GetxController {
   final tag = "UserInfoController";
   Rx<WhoiamM> user = WhoiamM().obs;
 
+  RxBool isLoadData = false.obs;
+
   @override
   void onInit() {
     super.onInit();
     getDataUser();
   }
 
-  void setDataUser(WhoiamM value) => user(value);
+  void setDataUser(WhoiamM value) {
+    isLoadData(true);
+    user(value);
+    isLoadData(false);
+  }
 
   Future<void> getDataUser() async {
+    isLoadData(true);
     try {
       final data = await AuthApi.whoIam();
 
@@ -24,8 +31,10 @@ class UserInfoController extends GetxController {
 
       logSys(tag);
       logSys(user.value.username.toString());
+      isLoadData(false);
     } catch (e) {
       logSys(e.toString());
+      isLoadData(false);
     }
   }
 }

@@ -1,6 +1,7 @@
 import 'package:renjani/app/api/relawan_api.dart';
 import 'package:renjani/app/modules/home/model/berita_terbaru_m.dart';
 import 'package:renjani/app/modules/home/model/event_terbaru_m.dart';
+import 'package:renjani/app/modules/home/model/galery_terbaru_m.dart';
 import 'package:renjani/utils/app_utils.dart';
 
 class BerandaRepo {
@@ -48,6 +49,23 @@ class BerandaRepo {
       // logSys(TAG + data['content'].toString());
       List<BeritaTerbaruM> b = <BeritaTerbaruM>[];
       b = List.from(a.map((e) => BeritaTerbaruM.fromJson(e)));
+      // logSys(b[0].idEvent.toString());
+
+      return b;
+    } catch (e) {
+      logSys(TAG + e.toString());
+      return [];
+    }
+  }
+
+  Future<List<GaleryTerbaruM>> getGalery() async {
+    try {
+      final data = await RelawanAPi.flashFotoTerbaru();
+      final a = data['content'];
+      // logSys(TAG);
+      // logSys(TAG + data['content'].toString());
+      List<GaleryTerbaruM> b = <GaleryTerbaruM>[];
+      b = List.from(a.map((e) => GaleryTerbaruM.fromJson(e)));
       // logSys(b[0].idEvent.toString());
 
       return b;

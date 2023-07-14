@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:image_picker/image_picker.dart';
+
 import '../../services/api_service.dart';
 
 class RelawanAPi {
@@ -19,15 +21,23 @@ class RelawanAPi {
     }
   }
 
-  static Future<Map<String, dynamic>> uploadFile(File file) async {
+  static Future<Map<String, dynamic>> uploadFile(XFile file) async {
     try {
-      const url = 'api/v1/relawans/survey_dan_sertifikat';
+      const url = 'api/v1/relawans/upload/foto_profil';
 
       final response = await ApiService().request(
         url: url,
-        method: Method.GET,
+        method: Method.FORMDATA,
+        parameters: {
+          "ipAddress": "string",
+          "username": "string",
+          "proses": "string"
+        },
+        file: file.path,
         isToken: true,
       );
+
+      {}
 
       return response;
     } catch (e) {

@@ -12,7 +12,15 @@ class UserProfileController extends GetxController {
   final cUserInfo = Get.find<UserInfoController>();
   final editFrofile = Get.find<EditProfileController>();
 
-  Rx<WhoiamM> user = WhoiamM().obs;
+  Rx<WhoiamM> user = WhoiamM(
+      username: "",
+      email: "",
+      id: 0,
+      relawan: Relawan(
+        alamat: "",
+        nama: "",
+        namaAlokasiUnit: "",
+      )).obs;
 
   final cNik = TextEditingController(text: "");
   final cHp = TextEditingController(text: "");
@@ -28,12 +36,19 @@ class UserProfileController extends GetxController {
 
   RxString photoProfileEdited = ''.obs;
 
+  RxBool isloadData = false.obs;
+
   File? image;
+
+  @override
+  void onClose() {
+    super.onClose();
+  }
 
   @override
   void onInit() async {
     super.onInit();
-    user(cUserInfo.user.value);
+    updateDataUser();
     await setData();
     getPoinUser();
   }
@@ -43,25 +58,25 @@ class UserProfileController extends GetxController {
     super.onReady();
   }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  Future<void> setData() async {
-    cNik.text = user.value.relawan!.nik!;
-    cHp.text = user.value.relawan!.notelp!;
-    cNim.text = user.value.relawan!.notelp!;
-    cIg.text = user.value.relawan!.instagram!;
-    cTiktok.text = user.value.relawan!.tiktok!;
-    cAlamat.text = user.value.relawan!.alamat!;
+  Future<void> updateDataUser() async {
+    user(cUserInfo.user.value);
   }
 
   Future<void> getPoinUser() async {
-    // final result = await RelawanAPi();
     String a = await UserProfileRepo().getPoinUserRelawan();
     poinRelawan(a);
   }
 
-  Future<void> uploadFoto() async {}
+  Future<void> setData() async {
+    isloadData(true);
+    if (cUserInfo.user.value != null) {
+      cNik.text = cUserInfo.user.value.relawan!.nik!;
+      cHp.text = cUserInfo.user.value.relawan!.notelp!;
+      cNim.text = cUserInfo.user.value.relawan!.notelp!;
+      cIg.text = cUserInfo.user.value.relawan!.instagram!;
+      cTiktok.text = cUserInfo.user.value.relawan!.tiktok!;
+      cAlamat.text = cUserInfo.user.value.relawan!.alamat!;
+      isloadData(false);
+    }
+  }
 }
