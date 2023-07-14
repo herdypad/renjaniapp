@@ -37,17 +37,17 @@ class AppCycleService {
     if (tokenExpiredTimer != null) {
       tokenExpiredTimer!.cancel();
     }
-    tokenExpiredTimer = null;
-    tokenExpiredTimer = Timer(d, () async {
-      showPopUpInfo(
-        title: 'Mohon maaf',
-        description: 'Sesi anda telah berakhir, silakan login kembali.',
-        labelButton: 'LOGIN',
-        onPress: () {
-          onUserLogout();
-        },
-      );
-    });
+    // tokenExpiredTimer = null;
+    // tokenExpiredTimer = Timer(d, () async {
+    //   showPopUpInfo(
+    //     title: 'Mohon maaf',
+    //     description: 'Sesi anda telah berakhir, silakan login kembali.',
+    //     labelButton: 'LOGIN',
+    //     onPress: () {
+    //       onUserLogout();
+    //     },
+    //   );
+    // });
   }
 
   Future<void> checkTokenAndRoute() async {

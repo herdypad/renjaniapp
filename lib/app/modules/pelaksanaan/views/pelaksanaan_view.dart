@@ -8,11 +8,14 @@ import '../../home/componet/navbar.dart';
 import '../component/asistensi_item.dart';
 import '../controllers/pelaksanaan_controller.dart';
 import '../../../../themes.dart';
+import 'package:flutter_swipe_action_cell/flutter_swipe_action_cell.dart';
 
 class PelaksanaanView extends GetView<PelaksanaanController> {
   const PelaksanaanView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    navigatorObservers:
+    [SwipeActionNavigatorObserver()];
     final GlobalKey<ScaffoldState> _scaffoldKey =
         new GlobalKey<ScaffoldState>();
 
@@ -144,29 +147,6 @@ class PelaksanaanView extends GetView<PelaksanaanController> {
                         title: "Asistensi SPT UMKM pada kantor pratama jakarta",
                         tgl: "29 October 2020",
                         status: "Draf"),
-                    asistensi_item(
-                        point: '10',
-                        title: "Asistensi SPT UMKM",
-                        tgl: "9 October 2020",
-                        status: "Draf"),
-                    Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: InkWell(
-                        onTap: () {},
-                        child: Ink(
-                          height: 54.h,
-                          decoration: BoxDecoration(
-                            color: btnPrimary,
-                            borderRadius: BorderRadius.circular(6),
-                          ),
-                          child: Center(
-                              child: Text("Load More",
-                                  style: mediumText14.copyWith(
-                                      fontSize: 14.sp,
-                                      color: primaryColor1.withOpacity(0.5)))),
-                        ),
-                      ),
-                    ),
                   ]),
                 ),
               ),
